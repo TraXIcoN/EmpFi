@@ -1,8 +1,11 @@
+from datetime import time
 import pandas as pd
 import json
 import openai
 import os
 from sklearn.model_selection import train_test_split
+from datetime import datetime
+from model_management import ModelManager
 
 def prepare_training_data():
     # Load your generated data
@@ -10,7 +13,7 @@ def prepare_training_data():
     
     # Convert data into training examples
     training_examples = []
-    
+
     # Group by company and location to create historical context
     for (company, state, county), group in df.groupby(['company', 'state_fips', 'county_fips']):
         # Sort by date
@@ -77,7 +80,7 @@ def start_fine_tuning(file_id):
 def create_evaluation_set():
     # Create separate evaluation examples
     eval_examples = []
-    df = pd.read_csv('investment_portfolio_timeseries.csv')
+    df = pd.read_csv('../../investment_portfolio_timeseries.csv')
     
     # Use last 3 months of data for evaluation
     latest_data = df[df['date'] >= df['date'].max() - pd.Timedelta(days=90)]
@@ -102,32 +105,56 @@ def test_fine_tuned_model(model_id):
     
     return response.choices[0].message.content
 
-# Main execution
-def main():
-    # Set your OpenAI API key
-    openai.api_key = os.getenv('OPENAI_API_KEY')
+def fine_tune_model():
+    model_manager = ModelManager()
     
-    # Prepare and upload training data
-    file_id = save_training_file()
-    print(f"Training file uploaded with ID: {file_id}")
+    # Check if we already have a fine-tuned model
+    if model_manager.get_current_model():
+        print(f"Using existing fine-tuned model: {model_manager.get_current_model()}")
+        return model_manager.get_current_model()
     
-    # Start fine-tuning
-    job_id = start_fine_tuning(file_id)
-    print(f"Fine-tuning job started with ID: {job_id}")
-    
-    # Monitor fine-tuning progress
-    while True:
-        job = openai.FineTuningJob.retrieve(job_id)
-        print(f"Status: {job.status}")
-        if job.status in ['succeeded', 'failed']:
-            break
-        time.sleep(60)
-    
-    if job.status == 'succeeded':
-        # Test the model
-        model_id = job.fine_tuned_model
-        test_result = test_fine_tuned_model(model_id)
-        print(f"Test prediction: {test_result}")
+    # Otherwise, proceed with fine-tuning
+    try:
+        # Prepare and upload training data
+        file_id = save_training_file()
+        print(f"Training file uploaded with ID: {file_id}")
+        
+        # Start fine-tuning
+        job_id = start_fine_tuning(file_id)
+        print(f"Fine-tuning job started with ID: {job_id}")
+        
+        # Monitor fine-tuning progress
+        while True:
+            job = openai.FineTuningJob.retrieve(job_id)
+            print(f"Status: {job.status}")
+            if job.status in ['succeeded', 'failed']:
+                break
+            time.sleep(60)
+        
+        if job.status == 'succeeded':
+            model_id = job.fine_tuned_model
+            # Register the new model
+            model_manager.register_model(
+                model_id,
+                training_details={
+                    'file_id': file_id,
+                    'job_id': job_id,
+                    'training_date': datetime.now().isoformat()
+                }
+            )
+            
+            # Test the model
+            test_result = test_fine_tuned_model(model_id)
+            print(f"Test prediction: {test_result}")
+            
+            return model_id
+        else:
+            raise Exception("Fine-tuning failed")
+            
+    except Exception as e:
+        print(f"Error during fine-tuning: {str(e)}")
+        return None
 
 if __name__ == "__main__":
-    main()
+    openai.api_key = os.getenv('OPENAI_API_KEY')
+    fine_tune_model()
