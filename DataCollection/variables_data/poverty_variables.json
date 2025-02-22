@@ -1,0 +1,481 @@
+{
+    "for": {
+        "label": "Census API FIPS 'for' clause",
+        "concept": "Census API Geography Specification",
+        "predicateType": "fips-for",
+        "group": "N/A",
+        "limit": 0,
+        "predicateOnly": true
+    },
+    "in": {
+        "label": "Census API FIPS 'in' clause",
+        "concept": "Census API Geography Specification",
+        "predicateType": "fips-in",
+        "group": "N/A",
+        "limit": 0,
+        "predicateOnly": true
+    },
+    "ucgid": {
+        "label": "Uniform Census Geography Identifier clause",
+        "concept": "Census API Geography Specification",
+        "predicateType": "ucgid",
+        "group": "N/A",
+        "limit": 0,
+        "predicateOnly": true,
+        "hasGeoCollectionSupport": true
+    },
+    "time": {
+        "label": "ISO-8601 Date/Time value",
+        "concept": "Census API Date/Time Specification",
+        "required": "true",
+        "predicateType": "datetime",
+        "group": "N/A",
+        "limit": 0,
+        "predicateOnly": true,
+        "datetime": {
+            "year": true
+        }
+    },
+    "SAEPOVRT5_17R_LB90": {
+        "label": "Ages 5-17 in Families in Poverty, Rate Lower Bound for 90% Confidence Interval",
+        "predicateType": "float",
+        "group": "N/A",
+        "limit": 0
+    },
+    "SAEMHI_UB90": {
+        "label": "Median Household Income Upper Bound for 90% Confidence Interval",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Median Household Income Upper Bound for 90% Confidence Interval"
+            }
+        }
+    },
+    "SAEPOVRT0_4_UB90": {
+        "label": "Ages 0-4 in Poverty, Rate Upper Bound for 90% Confidence Interval",
+        "predicateType": "float",
+        "group": "N/A",
+        "limit": 0
+    },
+    "SAEPOVRT0_4_MOE": {
+        "label": "Ages 0-4 in Poverty, Rate Margin of Error",
+        "predicateType": "float",
+        "group": "N/A",
+        "limit": 0
+    },
+    "SAEPOVRTALL_LB90": {
+        "label": "All ages in Poverty, Rate Lower Bound for 90% Confidence Interval",
+        "predicateType": "float",
+        "group": "N/A",
+        "limit": 0
+    },
+    "SAEPOVALL_UB90": {
+        "label": "All ages in Poverty, Count Upper Bound for 90% Confidence Interval",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "All ages in Poverty, Count Upper Bound for 90% Confidence Interval"
+            }
+        }
+    },
+    "GEOID": {
+        "label": "State+County FIPS Code",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0
+    },
+    "SAEPOVALL_PT": {
+        "label": "All ages in Poverty, Count Estimate",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "All ages in Poverty, Count Estimate"
+            }
+        }
+    },
+    "STATE": {
+        "label": "FIPS State Code",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0
+    },
+    "SAEPOV0_17_PT": {
+        "label": "Ages 0-17 in Poverty, Count Estimate",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Ages 0-17 in Poverty, Rate Estimate"
+            }
+        }
+    },
+    "SAEPOVU_5_17R": {
+        "label": "Ages 5-17r in Poverty Universe",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Ages 5-17r in Poverty Universe"
+            }
+        }
+    },
+    "SAEPOVRT0_17_MOE": {
+        "label": "Ages 0-17 in Poverty, Rate Margin of Error",
+        "predicateType": "float",
+        "group": "N/A",
+        "limit": 0
+    },
+    "YEAR": {
+        "label": "Estimate Year",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1989": "Estimate Year",
+                "1993": "Estimate Year",
+                "1995": "Estimate Year",
+                "1996": "Estimate Year",
+                "1997": "Estimate Year",
+                "1998": "Estimate Year",
+                "1999": "Estimate Year",
+                "2000": "Estimate Year",
+                "2001": "Estimate Year",
+                "2002": "Estimate Year",
+                "2003": "Estimate Year",
+                "2004": "Estimate Year",
+                "2005": "Estimate Year",
+                "2006": "Estimate Year",
+                "2007": "Estimate Year",
+                "2008": "Estimate Year",
+                "2009": "Estimate Year",
+                "2010": "Estimate Year",
+                "2011": "Estimate Year",
+                "2012": "Estimate Year",
+                "2013": "Estimate Year",
+                "2014": "Estimate Year",
+                "2015": "Estimate Year",
+                "2016": "Estimate Year",
+                "2017": "Estimate Year",
+                "2018": "Estimate Year",
+                "2019": "Estimate Year",
+                "2020": "Estimate Year",
+                "2021": "Estimate Year"
+            }
+        }
+    },
+    "SAEPOVRT0_4_LB90": {
+        "label": "Ages 0-4 in Poverty, Rate Lower Bound for 90% Confidence Interval",
+        "predicateType": "float",
+        "group": "N/A",
+        "limit": 0
+    },
+    "SAEPOVRT0_17_UB90": {
+        "label": "Ages 0-17 in Poverty, Rate Upper Bound for 90% Confidence Interval",
+        "predicateType": "float",
+        "group": "N/A",
+        "limit": 0
+    },
+    "SAEPOVRT0_4_PT": {
+        "label": "Ages 0-4 in Poverty, Rate Estimate",
+        "predicateType": "float",
+        "group": "N/A",
+        "limit": 0
+    },
+    "SAEPOVRTALL_MOE": {
+        "label": "All ages in Poverty, Rate Margin of Error",
+        "predicateType": "float",
+        "group": "N/A",
+        "limit": 0
+    },
+    "SAEPOVU_0_17": {
+        "label": "Ages 0-17 in Poverty Universe",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Ages 0-17 in Poverty Universe"
+            }
+        }
+    },
+    "SAEPOV0_17_UB90": {
+        "label": "Ages 0-17 in Poverty, Count Upper Bound for 90% Confidence Interval",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Ages 0-17 in Poverty, Rate Upper Bound for 90% Confidence Interval"
+            }
+        }
+    },
+    "SAEPOV0_4_PT": {
+        "label": "Ages 0-4 in Poverty, Count Estimate",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Ages 0-4 in Poverty, Count Estimate"
+            }
+        }
+    },
+    "SAEPOVRT5_17R_PT": {
+        "label": "Ages 5-17 in Families in Poverty, Rate Estimate",
+        "predicateType": "float",
+        "group": "N/A",
+        "limit": 0
+    },
+    "SAEPOVU_0_4": {
+        "label": "Ages 0-4 in Poverty Universe",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Ages 0-4 in Poverty Universe"
+            }
+        }
+    },
+    "SAEPOV5_17R_UB90": {
+        "label": "Ages 5-17 in Families in Poverty, Count Upper Bound for 90% Confidence Interval",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Ages 5-17 in Families in Poverty, Rate Upper Bound for 90% Confidence Interval"
+            }
+        }
+    },
+    "COUNTY": {
+        "label": "County FIPS Code",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0
+    },
+    "SAEPOVRT0_17_LB90": {
+        "label": "Ages 0-17 in Poverty, Rate Lower Bound for 90% Confidence Interval",
+        "predicateType": "float",
+        "group": "N/A",
+        "limit": 0
+    },
+    "SAEPOV0_17_LB90": {
+        "label": "Ages 0-17 in Poverty, Count Lower Bound 90% Confidence Interval",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Ages 0-17 in Poverty, Rate Lower Bound for 90% Confidence Interval"
+            }
+        }
+    },
+    "SAEMHI_PT": {
+        "label": "Median Household Income Estimate",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Median Household Income Estimate"
+            }
+        }
+    },
+    "SAEPOVRT0_17_PT": {
+        "label": "Ages 0-17 in Poverty, Rate Estimate",
+        "predicateType": "float",
+        "group": "N/A",
+        "limit": 0
+    },
+    "SAEPOV5_17R_PT": {
+        "label": "Ages 5-17 in Families in Poverty, Count Estimate",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Ages 5-17 in Families in Poverty, Rate Estimate"
+            }
+        }
+    },
+    "SAEPOV0_4_MOE": {
+        "label": "Ages 0-4 in Poverty, Count Margin of Error",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Ages 0-4 in Poverty, Count Margin of Error"
+            }
+        }
+    },
+    "SAEPOVALL_LB90": {
+        "label": "All ages in Poverty, Count Lower Bound for 90% Confidence Interval",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "All ages in Poverty, Count Lower Bound for 90% Confidence Interval"
+            }
+        }
+    },
+    "SAEPOV0_4_UB90": {
+        "label": "Ages 0-4 in Poverty, Count Upper Bound for 90% Confidence Interval",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Ages 0-4 in Poverty, Count Upper Bound for 90% Confidence Interval"
+            }
+        }
+    },
+    "STABREV": {
+        "label": "Two-letter State Postal abbreviation",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0
+    },
+    "NAME": {
+        "label": "State or County Name",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0
+    },
+    "SAEPOVRT5_17R_UB90": {
+        "label": "Ages 5-17 in Families in Poverty, Rate Upper Bound for 90% Confidence Interval",
+        "predicateType": "float",
+        "group": "N/A",
+        "limit": 0
+    },
+    "SAEPOVRTALL_PT": {
+        "label": "All ages in Poverty, Rate Estimate",
+        "predicateType": "float",
+        "group": "N/A",
+        "limit": 0
+    },
+    "SAEPOVALL_MOE": {
+        "label": "All ages in Poverty, Count Margin of Error",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "All ages in Poverty, Count Margin of Error"
+            }
+        }
+    },
+    "SAEMHI_MOE": {
+        "label": "Median Household Income Margin of Error",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Median Household Income Margin of Error"
+            }
+        }
+    },
+    "SAEPOVU_ALL": {
+        "label": "All Ages in Poverty Universe",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "All Ages in Poverty Universe"
+            }
+        }
+    },
+    "SAEPOV0_4_LB90": {
+        "label": "Ages 0-4 in Poverty, Count Lower Bound for 90% Confidence Interval",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Ages 0-4 in Poverty, Count Lower Bound for 90% Confidence Interval"
+            }
+        }
+    },
+    "SAEPOVRTALL_UB90": {
+        "label": "All ages in Poverty, Rate Upper Bound for 90% Confidence Interval",
+        "predicateType": "float",
+        "group": "N/A",
+        "limit": 0
+    },
+    "SAEPOVRT5_17R_MOE": {
+        "label": "Ages 5-17 in Families in Poverty, Rate Margin of Error",
+        "predicateType": "float",
+        "group": "N/A",
+        "limit": 0
+    },
+    "SAEPOV5_17R_MOE": {
+        "label": "Ages 5-17 in Families in Poverty, Count Margin of Error",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Ages 5-17 in Families in Poverty, Rate Margin of Error"
+            }
+        }
+    },
+    "GEOCAT": {
+        "label": "Summary Level",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "010": "United States",
+                "040": "State",
+                "050": "County"
+            }
+        }
+    },
+    "SAEMHI_LB90": {
+        "label": "Median Household Income Lower Bound for 90% Confidence Interval",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-426": "Median Household Income Lower Bound for 90% Confidence Interval"
+            }
+        }
+    },
+    "SAEPOV5_17R_LB90": {
+        "label": "Ages 5-17 in Families in Poverty, Count Lower Bound for 90% Confidence Interval",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Ages 5-17 in Families in Poverty, Rate Lower Bound for 90% Confidence Interval"
+            }
+        }
+    },
+    "SAEPOV0_17_MOE": {
+        "label": "Ages 0-17 in Poverty, Count Margin of Error",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Ages 0-17 in Poverty, Rate Margin of Error"
+            }
+        }
+    }
+}

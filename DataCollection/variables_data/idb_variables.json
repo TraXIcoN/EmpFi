@@ -1,0 +1,883 @@
+{
+    "for": {
+        "label": "Census API FIPS 'for' clause",
+        "concept": "Census API Geography Specification",
+        "predicateType": "fips-for",
+        "group": "N/A",
+        "limit": 0,
+        "predicateOnly": true
+    },
+    "in": {
+        "label": "Census API FIPS 'in' clause",
+        "concept": "Census API Geography Specification",
+        "predicateType": "fips-in",
+        "group": "N/A",
+        "limit": 0,
+        "predicateOnly": true
+    },
+    "ucgid": {
+        "label": "Uniform Census Geography Identifier clause",
+        "concept": "Census API Geography Specification",
+        "predicateType": "ucgid",
+        "group": "N/A",
+        "limit": 0,
+        "predicateOnly": true,
+        "hasGeoCollectionSupport": true
+    },
+    "time": {
+        "label": "ISO-8601 Date/Time value",
+        "concept": "Census API Date/Time Specification",
+        "required": "true",
+        "predicateType": "datetime",
+        "group": "N/A",
+        "limit": 0,
+        "predicateOnly": true,
+        "datetime": {
+            "year": true
+        }
+    },
+    "POP100_": {
+        "label": "Total midyear population age 100+ years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "BIRTHS40_44": {
+        "label": "Births to females age 40-44",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "POP35_39": {
+        "label": "Total midyear population age 35-39 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "POP10_14": {
+        "label": "Total midyear population age 10-14 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FPOP25_29": {
+        "label": "Female midyear population age 25-29 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "NATINCR": {
+        "label": "Natural Increase: The difference between births and deaths",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "POP80_84": {
+        "label": "Total midyear population age 80-84 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FPOP": {
+        "label": "Female population at midyear",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "CDR": {
+        "label": "Crude death rate: Deaths per 1,000 midyear population",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "POP0_4": {
+        "label": "Total midyear population age 0-4 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "ASFR25_29": {
+        "label": "Age-specific fertility rate: Number of live births during a year per 1,000 females age 25-29 at midyear",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "YR": {
+        "label": "Year",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "POP_DENS": {
+        "label": "Population density: Population per square kilometer",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MPOP70_74": {
+        "label": "Male midyear population age 70-74 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MPOP95_99": {
+        "label": "Male midyear population age 95-99 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "POP30_34": {
+        "label": "Total midyear population age 30-34 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "TFR": {
+        "label": "Total fertility rate: Average number of children females would have by age 49 if the year's age-specific fertility rates remained constant",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FPOP45_49": {
+        "label": "Female midyear population age 45-49 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MPOP25_29": {
+        "label": "Male midyear population age 25-29 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FPOP90_94": {
+        "label": "Female midyear population age 90-94 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "POP15_19": {
+        "label": "Total midyear population age 15-19 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MPOP5_9": {
+        "label": "Male midyear population age 5-9 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FPOP0_4": {
+        "label": "Female midyear population age 0-4 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "POP60_64": {
+        "label": "Total midyear population age 60-64 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "POP": {
+        "label": "Population at midyear",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "SUMLEVEL": {
+        "label": "Summary Level code",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0
+    },
+    "GENC": {
+        "label": "GENC Standard Countries and Areas",
+        "group": "N/A",
+        "limit": 0
+    },
+    "AREA_KM2": {
+        "label": "Area in square kilometers",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "DEPND0_14": {
+        "label": "Youth dependency ratio: Ratio of population age 0-14 to population age 15-64, multiplied by 100",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FPOP95_99": {
+        "label": "Female midyear population age 95-99 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "DEPND": {
+        "label": "Dependency ratio: Ratio of population age 0-14 and 65+ to population age 15-64, multiplied by 100",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MMR0_4": {
+        "label": "Under age 5 mortality, males: Number of deaths before reaching age 5 per 1,000 live male births",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MPOP75_79": {
+        "label": "Male midyear population age 75-79 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MEDAGE_F": {
+        "label": "Median age, females: The age at which half of the female population is older and half is younger",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "ASFR20_24": {
+        "label": "Age-specific fertility rate: Number of live births during a year per 1,000 females age 20-24 at midyear",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "BIRTHS20_24": {
+        "label": "Births to females age 20-24",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FPOP40_44": {
+        "label": "Female midyear population age 40-44 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MPOP90_94": {
+        "label": "Male midyear population age 90-94 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MR0_4": {
+        "label": "Under age 5 mortality, both sexes: Number of deaths before reaching age 5 per 1,000 live births",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MEDAGE_M": {
+        "label": "Median age, males: The age at which half of the male population is older and half is younger",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FMR0_4": {
+        "label": "Under age 5 mortality, females: Number of deaths before reaching age 5 per 1,000 live female births",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FPOP65_69": {
+        "label": "Female midyear population age 65-69 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "BIRTHS35_39": {
+        "label": "Births to females age 35-39",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "ASFR40_44": {
+        "label": "Age-specific fertility rate: Number of live births during a year per 1,000 females age 40-44 at midyear",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FPOP5_9": {
+        "label": "Female midyear population age 5-9 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MPOP30_34": {
+        "label": "Male midyear population age 30-34 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "POP75_79": {
+        "label": "Total midyear population age 75-79 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FPOP75_79": {
+        "label": "Female midyear population age 75-79 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "BIRTHS25_29": {
+        "label": "Births to females age 25-29",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "BIRTHS": {
+        "label": "Births, both sexes: Number of live births during the year",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "ASFR15_19": {
+        "label": "Age-specific fertility rate: Number of live births during a year per 1,000 females age 15-19 at midyear",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MPOP65_69": {
+        "label": "Male midyear population age 65-69 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "POP40_44": {
+        "label": "Total midyear population age 40-44 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "NMR": {
+        "label": "Net migration rate: Difference between the number of immigrants entering and emigrants leaving a country in a year, per 1,000 midyear population",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MPOP35_39": {
+        "label": "Male midyear population age 35-39 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FPOP70_74": {
+        "label": "Female midyear population age 70-74 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "ASFR45_49": {
+        "label": "Age-specific fertility rate: Number of live births during a year per 1,000 females age 45-49 at midyear",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MMR1_4": {
+        "label": "Age 1-4 mortality, males: Number of deaths between the exact ages of 1 to 4 per 1,000 male children age 1",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "POP70_74": {
+        "label": "Total midyear population age 70-74 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MR1_4": {
+        "label": "Age 1-4 mortality, both sexes: Number of deaths between the exact of 1 to 4 per 1,000 children age 1",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FPOP80_84": {
+        "label": "Female midyear population age 80-84 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "E0": {
+        "label": "Life expectancy at birth, both sexes: Average number of years newborns would live if the year's age-specific mortality rates remained constant",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "DEATHS": {
+        "label": "Deaths, both sexes: Number of deaths during the year",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MPOP60_64": {
+        "label": "Male midyear population age 60-64 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "RNI": {
+        "label": "Rate of natural increase: Difference between births and deaths, divided by the population at midyear and multiplied by 100",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FMR1_4": {
+        "label": "Age 1-4 mortality, females: Number of deaths between the exact ages of 1 to 4 per 1,000 female children age 1",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MPOP85_89": {
+        "label": "Male midyear population age 85-89 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "ASFR35_39": {
+        "label": "Age-specific fertility rate: Number of live births during a year per 1,000 females age 35-39 at midyear",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MPOP15_19": {
+        "label": "Male midyear population age 15-19 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "BIRTHS30_34": {
+        "label": "Births to females age 30-34",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FPOP35_39": {
+        "label": "Female midyear population age 35-39 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "POP45_49": {
+        "label": "Total midyear population age 45-49 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FPOP10_14": {
+        "label": "Female midyear population age 10-14 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "POP20_24": {
+        "label": "Total midyear population age 20-24 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "POP90_94": {
+        "label": "Total midyear population age 90-94 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MPOP100_": {
+        "label": "Male midyear population age 100+ years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MPOP40_44": {
+        "label": "Male midyear population age 40-44 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FPOP15_19": {
+        "label": "Female midyear population age 15-19 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FPOP60_64": {
+        "label": "Female midyear population age 60-64 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "IMR": {
+        "label": "Infant mortality rate, both sexes: Number of deaths before reaching age 1 per 1,000 live births",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FPOP30_34": {
+        "label": "Female midyear population age 30-34 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MPOP10_14": {
+        "label": "Male midyear population age 10-14 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "E0_F": {
+        "label": "Life expectancy at birth, females: Average number of years newborn females would live if the year's age-specific mortality rates remained constant",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "POP65_69": {
+        "label": "Total midyear population age 65-69 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "DEPND65_": {
+        "label": "Old age dependency ratio: Ratio of population age 65+ to population age 15-64, multiplied by 100",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "POP95_99": {
+        "label": "Total midyear population age 95-99 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "E0_M": {
+        "label": "Life expectancy at birth, males: Average number of years newborn males would live if the year's age-specific mortality rates remained constant",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "SEXRATIO": {
+        "label": "Sex ratio of the population: Ratio of males to females in the population at midyear",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "SRB": {
+        "label": "Sex ratio at birth: Males per females born among live births",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "POP50_54": {
+        "label": "Total midyear population age 50-54 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MPOP20_24": {
+        "label": "Male midyear population age 20-24 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MPOP45_49": {
+        "label": "Male midyear population age 45-49 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "GRR": {
+        "label": "Gross reproduction rate: Average number of daughters females would have by age 49 if the year's age-specific fertility rates and sex-ratio at birth remained constant",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "GEOCOMP": {
+        "label": "GEO_ID Component",
+        "required": "default displayed",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0
+    },
+    "CBR": {
+        "label": "Crude birth rate: Live births per 1,000 midyear population",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "IMR_M": {
+        "label": "Infant mortality rate, males: Number of deaths before reaching age 1 per 1,000 live male births",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MPOP55_59": {
+        "label": "Male midyear population age 55-59 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "POP5_9": {
+        "label": "Total midyear population age 5-9 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "IMR_F": {
+        "label": "Infant mortality rate, females: Number of deaths before reaching age 1 per 1,000 live female births",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FPOP50_54": {
+        "label": "Female midyear population age 50-54 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MPOP": {
+        "label": "Male population at midyear",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "POP55_59": {
+        "label": "Total midyear population age 55-59 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MPOP0_4": {
+        "label": "Male midyear population age 0-4 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "BIRTHS45_49": {
+        "label": "Births to females age 45-49",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MEDAGE": {
+        "label": "Median age, both sexes: The age at which half of the population is older and half is younger",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FPOP20_24": {
+        "label": "Female midyear population age 20-24 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FPOP100_": {
+        "label": "Female midyear population age 100+ years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "BIRTHS15_19": {
+        "label": "Births to females age 15-19",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FPOP85_89": {
+        "label": "Female midyear population age 85-89 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "GR": {
+        "label": "Annual Growth Rate: Change in the population from births, deaths, and net migration, divided by the population at midyear, and multiplied by 100",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "ASFR30_34": {
+        "label": "Age-specific fertility rate: Number of live births during a year per 1,000 females age 30-34 at midyear",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "float",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "POP85_89": {
+        "label": "Total midyear population age 85-89 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "FPOP55_59": {
+        "label": "Female midyear population age 55-59 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MPOP80_84": {
+        "label": "Male midyear population age 80-84 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "GEO_ID": {
+        "label": "Geographic identifier code",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "string",
+        "group": "IDB5YEAR",
+        "limit": 0,
+        "attributes": "NAME"
+    },
+    "NIM": {
+        "label": "Net international migrants, both sexes: Difference between the number of immigrants entering and emigrants leaving a country in a year",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "ADM4": {
+        "label": "Administrative Division (4th Order)",
+        "group": "N/A",
+        "limit": 0
+    },
+    "ADM2": {
+        "label": "Administrative Division (2nd Order)",
+        "group": "N/A",
+        "limit": 0
+    },
+    "ADM3": {
+        "label": "Administrative Division (3rd Order)",
+        "group": "N/A",
+        "limit": 0
+    },
+    "ADM1": {
+        "label": "Administrative Division (1st Order)",
+        "group": "N/A",
+        "limit": 0
+    },
+    "POP25_29": {
+        "label": "Total midyear population age 25-29 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    },
+    "MPOP50_54": {
+        "label": "Male midyear population age 50-54 years",
+        "concept": "International Database 5 Year Table",
+        "predicateType": "int",
+        "group": "IDB5YEAR",
+        "limit": 0
+    }
+}

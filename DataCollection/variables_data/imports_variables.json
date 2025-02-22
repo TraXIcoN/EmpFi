@@ -1,0 +1,405 @@
+{
+    "for": {
+        "label": "Census API FIPS 'for' clause",
+        "concept": "Census API Geography Specification",
+        "predicateType": "fips-for",
+        "group": "N/A",
+        "limit": 0,
+        "predicateOnly": true
+    },
+    "in": {
+        "label": "Census API FIPS 'in' clause",
+        "concept": "Census API Geography Specification",
+        "predicateType": "fips-in",
+        "group": "N/A",
+        "limit": 0,
+        "predicateOnly": true
+    },
+    "ucgid": {
+        "label": "Uniform Census Geography Identifier clause",
+        "concept": "Census API Geography Specification",
+        "predicateType": "ucgid",
+        "group": "N/A",
+        "limit": 0,
+        "predicateOnly": true,
+        "hasGeoCollectionSupport": true
+    },
+    "time": {
+        "label": "ISO-8601 Date/Time value",
+        "concept": "Census API Date/Time Specification",
+        "required": "true",
+        "predicateType": "datetime",
+        "group": "N/A",
+        "limit": 0,
+        "predicateOnly": true,
+        "datetime": {
+            "year": true,
+            "month": true
+        }
+    },
+    "CNT_WGT_YR": {
+        "label": "Year-to-Date Containerized Vessel Shipping Weight",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "MONTH": {
+        "label": "Month",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0
+    },
+    "SUMMARY_LVL": {
+        "label": "Detail or Country Grouping indicator",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0
+    },
+    "COMM_LVL": {
+        "label": "4-character aggregation levels for commodity code",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0
+    },
+    "CC_YR": {
+        "label": "Year-to-Date Card Count",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "CNT_VAL_MO": {
+        "label": "Containerized Vessel Value",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "CON_CHA_MO": {
+        "label": "Imports for Consumption, Charges",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "CNT_VAL_YR": {
+        "label": "Year-to-Date Containerized Vessel Value",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "YEAR": {
+        "label": "Year",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0
+    },
+    "VES_CHA_MO": {
+        "label": "Vessel Charges",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "CNT_WGT_MO": {
+        "label": "Containerized Vessel Shipping Weight",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "USITCHISTORY": {
+        "label": "Geography",
+        "group": "N/A",
+        "limit": 0
+    },
+    "WORLD": {
+        "label": "Geography",
+        "group": "N/A",
+        "limit": 0
+    },
+    "USITCREG": {
+        "label": "Geography",
+        "group": "N/A",
+        "limit": 0
+    },
+    "VES_CHA_YR": {
+        "label": "Year-to-Date Vessel Charges",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "SUMLEVEL": {
+        "label": "Summary Level code",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0
+    },
+    "CC_MO": {
+        "label": "Card Count",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "LAST_UPDATE": {
+        "label": "Date of Last Update",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0
+    },
+    "VES_VAL_MO": {
+        "label": "Vessel Value",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "CNT_CHA_MO": {
+        "label": "Containerized Vessel Charges",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "VES_VAL_YR": {
+        "label": "Year-to-Date Vessel Value",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "DIST_NAME": {
+        "label": "District Name",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0
+    },
+    "USDA": {
+        "label": "USDA code",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "required": "default displayed",
+        "predicateType": "string",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0,
+        "attributes": "USDA_LABEL",
+        "values": {
+            "item": {
+                "-": "Total for all commodities",
+                "0": "Non-agricultural commodities",
+                "1": "Agricultural commodities"
+            }
+        }
+    },
+    "CNT_CHA_YR": {
+        "label": "Year-to-Date Containerized Vessel Charges",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "CON_CIF_MO": {
+        "label": "Imports for Consumption, CIF Value",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "CON_VAL_MO": {
+        "label": "Imports for Consumption, Total Value",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "GEN_CIF_MO": {
+        "label": "General Imports, CIF Value",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "CON_CIF_YR": {
+        "label": "Year-to-Date Imports for Consumption, CIF Value",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "AIR_WGT_MO": {
+        "label": "Air Shipping Weight",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "VES_WGT_MO": {
+        "label": "Vessel Shipping Weight",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "USITC": {
+        "label": "Geography",
+        "group": "N/A",
+        "limit": 0
+    },
+    "CON_VAL_YR": {
+        "label": "Year-to-Date Imports for Consumption, Total Value",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "DISTRICT": {
+        "label": "District Code",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "string",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0,
+        "attributes": "DISTRICT_LABEL"
+    },
+    "GEN_CIF_YR": {
+        "label": "Year-to-Date General Imports, CIF Value",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "GEOCOMP": {
+        "label": "GEO_ID Component",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0
+    },
+    "GEN_VAL_YR": {
+        "label": "Year-to-Date General Imports, Total Value",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "SUMMARY_LVL2": {
+        "label": "Variables being summarized",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0
+    },
+    "AIR_CHA_YR": {
+        "label": "Year-to-Date Air Charges",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "AIR_WGT_YR": {
+        "label": "Year-to-Date Air Shipping Weight",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "VES_WGT_YR": {
+        "label": "Year-to-Date Vessel Shipping Weight",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "GEN_VAL_MO": {
+        "label": "General Imports, Total Value",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "AIR_CHA_MO": {
+        "label": "Air Charges",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "AIR_VAL_MO": {
+        "label": "Air Value",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "CAL_DUT_YR": {
+        "label": "Year-to-Date Imports for Consumption, Calculated Duty",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "GEN_CHA_YR": {
+        "label": "Year-to-Date General Imports, Charges",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "CAL_DUT_MO": {
+        "label": "Imports for Consumption, Calculated Duty",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "GEO_ID": {
+        "label": "Geographic identifier code",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "string",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0,
+        "attributes": "NAME"
+    },
+    "GEN_CHA_MO": {
+        "label": "General Imports, Charges",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "CON_CHA_YR": {
+        "label": "Year-to-Date Imports for Consumption, Charges",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "DUT_VAL_YR": {
+        "label": "Year-to-Date Imports for Consumption, Dutiable Value",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "CTY_CODE": {
+        "label": "Country Code",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0,
+        "attributes": "CTY_NAME"
+    },
+    "DUT_VAL_MO": {
+        "label": "Imports for Consumption, Dutiable Value",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    },
+    "AIR_VAL_YR": {
+        "label": "Year-to-Date Air Value",
+        "concept": "Monthly Imports by Department of Agriculture code",
+        "predicateType": "int",
+        "group": "IT00IMPORTSUSDA",
+        "limit": 0
+    }
+}

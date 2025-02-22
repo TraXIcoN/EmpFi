@@ -1,0 +1,2699 @@
+{
+    "ICSOUSE": {
+        "label": "WR: Particular use of \"other\" assistance - Other",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IINCEDUC": {
+        "label": "WR: Gov't asst. inquired about - Education or training",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "ICASHOHH": {
+        "label": "WR: Item WR65 DKs and Refusals",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "0": "Not answered",
+                "-2": "Refused"
+            }
+        }
+    },
+    "IHLPDK": {
+        "label": "WR: Item WR06B DK's and Refusals",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "2": "No",
+                "1": "Yes",
+                "-1": "Don't know",
+                "-2": "Refused"
+            }
+        }
+    },
+    "IWFTYPE": {
+        "label": "WR: Venue of community service",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "2": "A private, for profit company",
+                "3": "Or a non-profit organization, including tax exempt and charitable organization",
+                "-1": "Don't know",
+                "1": "A Government organization, including a public school, or, a government social service agency",
+                "-2": "Refused"
+            }
+        }
+    },
+    "IFAGROC": {
+        "label": "WR: Type of food-related assist. rec'd bags of food",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "2": "No",
+                "1": "Yes",
+                "-1": "Don't know",
+                "-2": "Refused"
+            }
+        }
+    },
+    "IINCWIC": {
+        "label": "WR: Government assistance inquired about - WIC",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "ICSNCASH": {
+        "label": "WR: Amount of \"other\" assistance - no cash value",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "No cash value",
+                "0": "Not answered",
+                "-2": "Refused",
+                "-1": "Don't know"
+            }
+        }
+    },
+    "ICASHCAR": {
+        "label": "WR: Specified use for short-term cash assistance - car",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "INOTWKRQ": {
+        "label": "WR: AFDC cut- non/coop work reqs.",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IRIDEYN": {
+        "label": "WR: Type of transportation assistance...recd ride to Dr",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "-2": "Refused",
+                "0": "Not answered",
+                "1": "Yes",
+                "2": "No"
+            }
+        }
+    },
+    "ICSOUSEE": {
+        "label": "WR: Item WR73 DKs and Refusals",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "-1": "Don't know",
+                "-2": "Refused"
+            }
+        }
+    },
+    "IOTHHYN": {
+        "label": "WR: Records recipiency of \"other\" low-income benefits",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-2": "Refused",
+                "-1": "Don't know",
+                "0": "Not answered",
+                "1": "Yes",
+                "2": "No"
+            }
+        }
+    },
+    "IINCOTHH": {
+        "label": "WR: Item WR104 DKs and Refusals",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "-1": "Don't know",
+                "-2": "Refused"
+            }
+        }
+    },
+    "ICASHAMT": {
+        "label": "WR: Amount of short-term cash assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-2": "Refused",
+                "0": "Not answered",
+                "-1": "Don't know"
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "9999",
+                    "description": "dollar amount"
+                }
+            ]
+        }
+    },
+    "IKIDLIMT": {
+        "label": "WR: No AFDC- exceeded time limit",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "INOTLIMT": {
+        "label": "WR: AFDC cut- exceeded time limit",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IPBREDYN": {
+        "label": "WR: Respondent has benefit cut",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "2": "No",
+                "0": "Not answered",
+                "1": "Yes",
+                "-2": "Refused",
+                "-1": "Don't know"
+            }
+        }
+    },
+    "ICSCOLL": {
+        "label": "WR: Child support assistance collecting child support",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "-2": "Refused",
+                "1": "Yes",
+                "2": "No",
+                "-1": "Don't know"
+            }
+        }
+    },
+    "IINCTRAN": {
+        "label": "WR: Gov't asst inquired about- Transportation assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "IFAMEAL": {
+        "label": "WR: Food-related assistance rec'd-meal from shelter",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes",
+                "-2": "Refused",
+                "2": "No",
+                "-1": "Don't know"
+            }
+        }
+    },
+    "ININELIG": {
+        "label": "WR: Reason didn't apply- Not eligible for other reason",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "IINCSSI": {
+        "label": "WR: Gov't asst. inquired about - SSI",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "ICSELSEE": {
+        "label": "WR: Item WR69 DKs and Refusals",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-2": "Refused",
+                "0": "Not answered",
+                "-1": "Don't know"
+            }
+        }
+    },
+    "IJHJOBYN": {
+        "label": "WR: Did training/assistance lead to job?",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "-2": "Refused",
+                "0": "Not answered",
+                "-1": "Don't know",
+                "2": "No"
+            }
+        }
+    },
+    "IWFCORE": {
+        "label": "WR: FR note - work for benefits/experience info in core?",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "3": "Not sure",
+                "1": "Yes",
+                "-2": "Refused",
+                "2": "No",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IINCCAT": {
+        "label": "WR: Records total HH income in grouped increments",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "5": "$40,000 to $50,000",
+                "0": "Not answered",
+                "3": "$20,000 to $30,000",
+                "4": "$30,000 to $40,000",
+                "1": "less than  $10,000",
+                "2": "$10,000 to $20,000",
+                "6": "$50,000 or more",
+                "-1": "Don't know",
+                "-2": "Refused"
+            }
+        }
+    },
+    "IHAOTH": {
+        "label": "WR: Source of non-Section 8 assistance - other",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "ITRAIHYN": {
+        "label": "WR: Rec. welf/soc. ser assist w/hire, training, wages",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "2": "No",
+                "-1": "Don't know",
+                "0": "Not answered",
+                "-2": "Refused",
+                "1": "Yes"
+            }
+        }
+    },
+    "IKIDWKRQ": {
+        "label": "WR: No AFDC- non/coop work reqs.",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "ICSWELF": {
+        "label": "WR: Source of help to obtain child supp.- welfare office",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "INOTSIGN": {
+        "label": "WR: AFDC cut- rejected signed plan",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "IHLPHIRE": {
+        "label": "WR: Rec. welf/soc. ser assist w/hire, training, wages",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes",
+                "2": "No"
+            }
+        }
+    },
+    "INOTMAX": {
+        "label": "WR: AFDC cut- had max assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "ICSCOURT": {
+        "label": "WR: Child support assistance obtaining court order",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "-2": "Refused",
+                "0": "Not answered",
+                "1": "Yes",
+                "2": "No"
+            }
+        }
+    },
+    "IINCAFDC": {
+        "label": "WR: Gov't assistance inquired about - AFDC or ADC",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "IJHCOL": {
+        "label": "WR: College degree/certificate assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "-1": "Don't know",
+                "2": "No",
+                "-2": "Refused",
+                "1": "Yes"
+            }
+        }
+    },
+    "INOTHIGH": {
+        "label": "WR: AFDC cut- income too high",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "ICAEMP": {
+        "label": "WR: Sources of clothing assistance received - employer",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "ICCPAYYN": {
+        "label": "WR: Did government pay any child care cost?",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "-2": "Refused",
+                "2": "No",
+                "0": "Not answered",
+                "-1": "Don't know"
+            }
+        }
+    },
+    "IGASVYN": {
+        "label": "WR: Type of transportation assistance rec. - gas voucher",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "2": "No",
+                "0": "Not answered",
+                "-1": "Don't know",
+                "-2": "Refused",
+                "1": "Yes"
+            }
+        }
+    },
+    "IINCUNEM": {
+        "label": "WR: Gov't asst inquired about- Unemployment Compensation",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IJHOTH": {
+        "label": "WR: Other training/job search assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-2": "Refused",
+                "0": "Not answered",
+                "2": "No",
+                "-1": "Don't know",
+                "1": "Yes"
+            }
+        }
+    },
+    "IPAYN2": {
+        "label": "WR: Verification of lack of assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "2": "No",
+                "-1": "Don't know",
+                "0": "Not answered",
+                "-2": "Refused"
+            }
+        }
+    },
+    "IWFIND": {
+        "label": "WR: Type of private org using ...'s community service",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Manufacturing",
+                "3": "Retail trade",
+                "-1": "Don't know",
+                "2": "Wholesale trade",
+                "4": "Service",
+                "5": "or somthing else?",
+                "-2": "Refused"
+            }
+        }
+    },
+    "IJHCLER": {
+        "label": "WR: Other clerical skills assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "-2": "Refused",
+                "1": "Yes",
+                "2": "No",
+                "-1": "Don't know"
+            }
+        }
+    },
+    "IVOUGA": {
+        "label": "WR: Sources of food assistance received - govt agency",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "IFOODHYN": {
+        "label": "WR: Rec food assist not Food Stamps/WIC/school meals",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-2": "Refused",
+                "0": "Not answered",
+                "1": "Yes",
+                "-1": "Don't know",
+                "2": "No"
+            }
+        }
+    },
+    "IPAYN": {
+        "label": "WR: Asks if income assistance was received",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes",
+                "-2": "Refused",
+                "2": "No",
+                "-1": "Don't know"
+            }
+        }
+    },
+    "IREDINFO": {
+        "label": "WR: Bene cut- gave too little req. info",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "IREDCSRQ": {
+        "label": "WR: Bene cut- non-coop CS req",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "ICSCLOS": {
+        "label": "WR: Particular use of \"other\" assist- clothes for you",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IINCENER": {
+        "label": "WR: Gov't asst. inquired about - Energy Assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "IINCOTH": {
+        "label": "WR: Government assistance inquired about - Other",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "ININIMM": {
+        "label": "WR: Reason didn't apply- Not eligible/immigration status",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "ICASHHM": {
+        "label": "WR: Number of short-term cash payments during ref period",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-2": "Refused",
+                "0": "Not answered",
+                "-1": "Don't know"
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "99",
+                    "description": "number of payments"
+                }
+            ]
+        }
+    },
+    "IVOUOTH": {
+        "label": "WR: Sources of food assistance received - someplace else",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "IJHGED": {
+        "label": "WR: GED assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-2": "Refused",
+                "2": "No",
+                "-1": "Don't know",
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "IWFJOB": {
+        "label": "WR: Did work for benefits/experience lead to job?",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "2": "No",
+                "-2": "Refused",
+                "0": "Not answered",
+                "-1": "Don't know"
+            }
+        }
+    },
+    "IJCOMPTR": {
+        "label": "WR: Was training completed?",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered",
+                "2": "No",
+                "-1": "Don't know",
+                "-2": "Refused"
+            }
+        }
+    },
+    "IHLPTRAI": {
+        "label": "WR: Rec. welf/soc. ser assist w/hire, training, wages",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "2": "No",
+                "0": "Not answered"
+            }
+        }
+    },
+    "INOTOLD": {
+        "label": "WR: AFDC cut- children too old",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IHLPWAGE": {
+        "label": "WR: Rec. welf/soc. ser assist w/hire, training, wages",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes",
+                "2": "No"
+            }
+        }
+    },
+    "IJHMACH": {
+        "label": "WR: Machinery training assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "-2": "Refused",
+                "-1": "Don't know",
+                "0": "Not answered",
+                "2": "No"
+            }
+        }
+    },
+    "ITOKYN": {
+        "label": "WR: Type of transportation assist received- bus tokens",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "0": "Not answered",
+                "-2": "Refused",
+                "1": "Yes",
+                "2": "No"
+            }
+        }
+    },
+    "IKIDSSI": {
+        "label": "WR: No AFDC- receiving SSI",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IJHENG": {
+        "label": "WR: English language assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "2": "No",
+                "0": "Not answered",
+                "-1": "Don't know",
+                "-2": "Refused"
+            }
+        }
+    },
+    "IELIGYR": {
+        "label": "WR: Date AFDC ineligible- year",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "-2": "Refused",
+                "0": "Not answered"
+            },
+            "range": [
+                {
+                    "min": "2001",
+                    "max": "2030",
+                    "description": "Year"
+                }
+            ]
+        }
+    },
+    "INOTDK": {
+        "label": "WR: Item WR116 DK's and Refusals",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-3": "End of respondent's entries",
+                "0": "Not answered",
+                "-2": "Refused",
+                "-1": "Don't know"
+            }
+        }
+    },
+    "IJHCOMP": {
+        "label": "WR: Computer training assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "2": "No",
+                "-1": "Don't know",
+                "1": "Yes",
+                "0": "Not answered",
+                "-2": "Refused"
+            }
+        }
+    },
+    "IINCGA": {
+        "label": "WR: Gov't asst. inquired about - Gen'l Asst. Prgm",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "IVOUFAM": {
+        "label": "WR: Sources of food assistance received - family/friends",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "IINCFS": {
+        "label": "WR: Gov't assistance inquired about - Food Stamps",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IINCMCD": {
+        "label": "WR: Gov't assistance inquired about - Medicaid",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "IREDSSI": {
+        "label": "WR: Bene cut- receiving SSI",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "ICSAMT": {
+        "label": "WR: Amount of \"other\" assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "-2": "Refused",
+                "-1": "Don't know"
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "9999",
+                    "description": "Amount in dollars"
+                }
+            ]
+        }
+    },
+    "ICASHREN": {
+        "label": "WR: Specified use for short-term cash assistance - rent",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "ICCSITT": {
+        "label": "WR: Types of child care paid for by govt.-non-rel.",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-2": "Refused",
+                "2": "No",
+                "0": "Not answered",
+                "1": "Yes",
+                "-1": "Don't know"
+            }
+        }
+    },
+    "EAWRUNV": {
+        "label": "WR: Universe indicator.",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Not in Universe",
+                "1": "In universe"
+            }
+        }
+    },
+    "ICCTYPE": {
+        "label": "WR: Were child care services free?",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Paid part of the cost",
+                "-1": "Don't know",
+                "2": "Free child care",
+                "3": "Neither",
+                "4": "Both",
+                "0": "Not answered",
+                "-2": "Refused"
+            }
+        }
+    },
+    "IKIDINFO": {
+        "label": "WR: No AFDC- gave too little req. info.",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "ICSCAR": {
+        "label": "WR: Particular use of \"other\" assistance - Car expenses",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "IKIDCSRQ": {
+        "label": "WR: No AFDC- non/coop CS reqs.",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "ICCWHO": {
+        "label": "WR: Who (non-govt.) helped pay the cost of child care?",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-2": "Refused",
+                "0": "Not answered",
+                "-1": "Don't know",
+                "1": "An employer",
+                "4": "A friend",
+                "2": "A charity",
+                "3": "A relative",
+                "5": "Other"
+            }
+        }
+    },
+    "IINQCOMP": {
+        "label": "WR: Respondent inquiry about government assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "-1": "Don't know",
+                "2": "No",
+                "1": "Yes",
+                "-2": "Refused"
+            }
+        }
+    },
+    "ICSFOOD": {
+        "label": "WR: Particular use of \"other\" assistance - Food",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "IINQCOMO": {
+        "label": "WR: Respondent inquiry about additional gov't assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "-1": "Don't know",
+                "-2": "Refused",
+                "1": "Yes",
+                "2": "No"
+            }
+        }
+    },
+    "IREDWKRQ": {
+        "label": "WR: Bene cut- non/coop wk req.",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "ICSPAT": {
+        "label": "WR: Child support assistance - establishing paternity",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "2": "No",
+                "-1": "Don't know",
+                "1": "Yes",
+                "-2": "Refused"
+            }
+        }
+    },
+    "IHATYPE": {
+        "label": "WR: Type of housing assistance program received",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "2": "Other rental assistance",
+                "1": "Section 8",
+                "-2": "Refused",
+                "3": "Not sure/Don't know"
+            }
+        }
+    },
+    "IJHLIS": {
+        "label": "WR: Jobs listing assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "-1": "Don't know",
+                "-2": "Refused",
+                "1": "Yes",
+                "2": "No"
+            }
+        }
+    },
+    "ICCREL": {
+        "label": "WR: Types of child care paid for by govt.-relative",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "2": "No",
+                "-2": "Refused",
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "IJHLIT": {
+        "label": "WR: Literacy training assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-2": "Refused",
+                "0": "Not answered",
+                "1": "Yes",
+                "2": "No",
+                "-1": "Don't know"
+            }
+        }
+    },
+    "IJHSELF": {
+        "label": "WR: Self-esteem building assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered",
+                "-2": "Refused",
+                "2": "No",
+                "-1": "Don't know"
+            }
+        }
+    },
+    "ICSOTHH": {
+        "label": "WR: Item WR66 DKs and Refusals",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-2": "Refused",
+                "-1": "Don't know",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IVOUHAR": {
+        "label": "WR: Sources of food assist. rec'd-charity",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "IFAOTH": {
+        "label": "WR: Type of food-related assistance received - other",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "2": "No",
+                "0": "Not answered",
+                "1": "Yes",
+                "-1": "Don't know",
+                "-2": "Refused"
+            }
+        }
+    },
+    "IINCPH": {
+        "label": "WR: Gov't asst. inquired about- Public Housing/Section 8",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IOTHTYN": {
+        "label": "WR: Other type of transportation assistance received",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "2": "No",
+                "0": "Not answered",
+                "-1": "Don't know",
+                "1": "Yes",
+                "-2": "Refused"
+            }
+        }
+    },
+    "ININCHAR": {
+        "label": "WR: Reason didn't apply - Don't take charity/gov't aid",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "ICAOTHH": {
+        "label": "WR: Item WR54 DK's and Refusals",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "0": "Not answered",
+                "-2": "Refused"
+            }
+        }
+    },
+    "ICSOTH2": {
+        "label": "WR: Child support assistance other kind of help?",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-2": "Refused",
+                "1": "Yes",
+                "0": "Not answered",
+                "2": "No",
+                "-1": "Don't know"
+            }
+        }
+    },
+    "IREDDK": {
+        "label": "WR: Item WR114 DK's and Refusals",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "-1": "Don't know",
+                "-2": "Refused"
+            }
+        }
+    },
+    "ICSGOV": {
+        "label": "WR: Source of \"other\" benefits- government agency",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "ICASHFOO": {
+        "label": "WR: Specified use for short-term cash assistance - food",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "ICARYN": {
+        "label": "WR: Type of transportation assistance ... received",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes",
+                "-2": "Refused",
+                "2": "No",
+                "-1": "Don't know"
+            }
+        }
+    },
+    "IKDSTRTM": {
+        "label": "WR: Date of kid's own PA coverage- month",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "-2": "Refused",
+                "-1": "Don't know"
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "12",
+                    "description": "Month"
+                }
+            ]
+        }
+    },
+    "IELIGMON": {
+        "label": "WR: Date AFDC ineligible- month",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-2": "Refused",
+                "-1": "Don't know",
+                "0": "Not answered"
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "12",
+                    "description": "Month"
+                }
+            ]
+        }
+    },
+    "ININWORT": {
+        "label": "WR: Reason didn't apply- The money is not worth it",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "ICCEMPYN": {
+        "label": "WR: Did charity/relative/friends pay child care costs?",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-2": "Refused",
+                "0": "Not answered",
+                "1": "Yes",
+                "-1": "Don't know",
+                "2": "No"
+            }
+        }
+    },
+    "IREQPAT": {
+        "label": "WR: Reported establishment of paternity for a child",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "2": "No",
+                "-1": "Don't know",
+                "-2": "Refused",
+                "1": "Yes"
+            }
+        }
+    },
+    "IVOUTHH": {
+        "label": "WR: Item WR50 DK's and Refusals",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "-1": "Don't know",
+                "-2": "Refused"
+            }
+        }
+    },
+    "ICAFAM": {
+        "label": "WR: Sources of clothing assist received- fam/friends",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "IREDINCR": {
+        "label": "WR: Bene cut- inc too high",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "ICSABS": {
+        "label": "WR: Child support assistance - locating a parent",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "1": "Yes",
+                "-2": "Refused",
+                "0": "Not answered",
+                "2": "No"
+            }
+        }
+    },
+    "ICSCLOK": {
+        "label": "WR: Particular use of \"other\" assist- Clothes for child",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "ININOTH": {
+        "label": "WR: Reason didn't apply- Some other reason",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "ININTRAN": {
+        "label": "WR: Reason didn't apply - No transportation to office",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "ICAOTH": {
+        "label": "WR: Sources of clothing assist. rec'd - someplace else",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "ICSPART": {
+        "label": "WR: Use specified for \"other\" assistance?",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "-2": "Refused",
+                "0": "Not answered",
+                "1": "Particular use",
+                "2": "Whatever was needed"
+            }
+        }
+    },
+    "IKDSTRTY": {
+        "label": "WR: Date of kid's own PA coverage- year",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "-2": "Refused",
+                "0": "Not answered"
+            },
+            "range": [
+                {
+                    "min": "1900",
+                    "max": "2030",
+                    "description": "Year"
+                }
+            ]
+        }
+    },
+    "ICSEARL": {
+        "label": "WR: \"Other\" assistance amount reported earlier?",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "0": "Not answered",
+                "-2": "Refused",
+                "1": "Yes",
+                "2": "No"
+            }
+        }
+    },
+    "ININPLAN": {
+        "label": "WR: Reason didn't apply- Haven't done it yet/plan to",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "IHACHAR": {
+        "label": "WR: Source of non-Section 8 assist. charity",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "ININAVAI": {
+        "label": "WR: Reason didn't apply- No other assist",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "INOTMARR": {
+        "label": "WR: AFDC cut- got married",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IHOUSHYN": {
+        "label": "WR: House asst not pub house/gov rent asst/energy asst",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-2": "Refused",
+                "1": "Yes",
+                "2": "No",
+                "0": "Not answered",
+                "-1": "Don't know"
+            }
+        }
+    },
+    "INUMPAY": {
+        "label": "WR: Number of payments to employer",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Single payment",
+                "2": "More than one",
+                "-2": "Refused",
+                "0": "Not answered",
+                "-1": "Don't know"
+            }
+        }
+    },
+    "IHAGA": {
+        "label": "WR: Source of Non-Section 8 assistance - gov agency",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "ICSRENT": {
+        "label": "WR: Particular use of \"other\" assistance - rent",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "ICCCOV02": {
+        "label": "WR: Children who received government assisted child care",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "-2": "Refused",
+                "0": "Not answered"
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "1299",
+                    "description": "Person number of child"
+                }
+            ]
+        }
+    },
+    "ICSOTH": {
+        "label": "WR: Source of help for obtaining child support - other",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "ICCCOV01": {
+        "label": "WR: Children who received gov't. assisted child care",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "0": "Not answered",
+                "-2": "Refused"
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "1299",
+                    "description": "Person number of child"
+                }
+            ]
+        }
+    },
+    "IALWAYCH": {
+        "label": "WR: AFDC always covered kids only ?",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "2": "No",
+                "1": "Yes",
+                "0": "Not answered",
+                "-2": "Refused"
+            }
+        }
+    },
+    "ICCCOV04": {
+        "label": "WR: Children who received gov't. assisted child care",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "-1": "Don't know",
+                "-2": "Refused"
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "1299",
+                    "description": "Person number of child"
+                }
+            ]
+        }
+    },
+    "ICCCOV03": {
+        "label": "WR: Children who received gov't. assisted child care",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-2": "Refused",
+                "0": "Not answered",
+                "-1": "Don't know"
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "1299",
+                    "description": "Person number of child"
+                }
+            ]
+        }
+    },
+    "ICCCOV06": {
+        "label": "WR: Children who received gov't. assisted child care",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "0": "Not answered",
+                "-2": "Refused"
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "1299",
+                    "description": "Person number of child"
+                }
+            ]
+        }
+    },
+    "IJHDRES": {
+        "label": "WR: Dressing assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "1": "Yes",
+                "2": "No",
+                "0": "Not answered",
+                "-2": "Refused"
+            }
+        }
+    },
+    "ICCCOV05": {
+        "label": "WR: Children who received gov't. assisted child care",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "-1": "Don't know",
+                "-2": "Refused"
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "1299",
+                    "description": "Person number of child"
+                }
+            ]
+        }
+    },
+    "ICCCOV07": {
+        "label": "WR: Children who received gov't. assisted child care",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-2": "Refused",
+                "-1": "Don't know",
+                "0": "Not answered"
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "1299",
+                    "description": "Person number of child"
+                }
+            ]
+        }
+    },
+    "INOTNEED": {
+        "label": "WR: AFDC cut- no longer needed",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "ICLOTHYN": {
+        "label": "WR: Records receipt of clothing assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "-1": "Don't know",
+                "2": "No",
+                "-2": "Refused",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IREQINC": {
+        "label": "WR: Reported income/address changes-welfare requirement",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "2": "No",
+                "-1": "Don't know",
+                "-2": "Refused",
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IJHPAYYN": {
+        "label": "WR: Did respondent pay for education/training?",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "1": "Yes",
+                "-2": "Refused",
+                "0": "Not answered",
+                "2": "No"
+            }
+        }
+    },
+    "IWFORG": {
+        "label": "WR: Function of govt. org. using ...'s community service",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "5": "Health",
+                "3": "Public Safety",
+                "-1": "Don't know",
+                "-2": "Refused",
+                "1": "Education",
+                "6": "Religion",
+                "0": "Not answered",
+                "2": "Social Service",
+                "7": "Or something else?",
+                "4": "Recreation"
+            }
+        }
+    },
+    "ICASHAL": {
+        "label": "WR: Short-term cash assistance reported earlier?",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "2": "No",
+                "0": "Not answered",
+                "-2": "Refused",
+                "1": "Yes",
+                "-1": "Don't know"
+            }
+        }
+    },
+    "ICASHOTH": {
+        "label": "WR: Specified use for short-term cash assistance - other",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "ICACHAR": {
+        "label": "WR: Sources of clothing assistance received - charity",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "INOTCSRQ": {
+        "label": "WR: AFDC cut- non/coop CS reqs.",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "INOTINFO": {
+        "label": "WR: AFDC cut- gave too little req info",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "IHAOTHH": {
+        "label": "WR: Item WR58 DK's and Refusals",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-2": "Refused",
+                "-1": "Don't know",
+                "0": "Not answered"
+            }
+        }
+    },
+    "ICSELSE": {
+        "label": "WR: Source of \"other\" benefits- Someplace else",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "IJOBHELP": {
+        "label": "WR: Did ... receive govt/social service help get job",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "-2": "Refused",
+                "0": "Not answered",
+                "2": "No",
+                "-1": "Don't know"
+            }
+        }
+    },
+    "ICAGA": {
+        "label": "WR: Sources of clothing assistance received- gov agency",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IJHRUSU": {
+        "label": "WR: Resume writing assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "2": "No",
+                "-1": "Don't know",
+                "1": "Yes",
+                "-2": "Refused",
+                "0": "Not answered"
+            }
+        }
+    },
+    "ICCAFT": {
+        "label": "WR: Types of child care paid for by govt-school prog.",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "2": "No",
+                "0": "Not answered",
+                "-2": "Refused",
+                "-1": "Don't know"
+            }
+        }
+    },
+    "ICSFAM": {
+        "label": "WR: Source of other benefits- Family, friends",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "ININLIMT": {
+        "label": "WR: Reason didn't apply- Exceeded time limit",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "INOTOTH": {
+        "label": "WR: AFDC cut- other",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "IELIGNUM": {
+        "label": "WR: Remaining months AFDC eligibility",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "-2": "Refused",
+                "0": "Not answered"
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "99",
+                    "description": "Month"
+                }
+            ]
+        }
+    },
+    "IKIDDK": {
+        "label": "WR: Item WR119 DK's and Refusals",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "0": "Not answered",
+                "-2": "Refused",
+                "-3": "End of respondent's entries"
+            }
+        }
+    },
+    "IREQDT": {
+        "label": "WR: Reported drug testing req'd by welf/soc service ofc",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "2": "No",
+                "0": "Not answered",
+                "-1": "Don't know",
+                "-2": "Refused"
+            }
+        }
+    },
+    "IPASTYR": {
+        "label": "WR: Year of past Public Asst recipiency",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "-2": "Refused",
+                "0": "Not answered"
+            },
+            "range": [
+                {
+                    "min": "1873",
+                    "max": "2004",
+                    "description": "1873"
+                }
+            ]
+        }
+    },
+    "IINCMEAL": {
+        "label": "WR: Gov't asst. inquired about - School meals",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "ICASHCK": {
+        "label": "WR: Use for short-term cash assistance-clothes for child",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "ININHAS": {
+        "label": "WR: Reason didn't apply - Too much run-around, hassle",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IKIDSIGN": {
+        "label": "WR: No AFDC- rejected signed plan.",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "ICASHCS": {
+        "label": "WR: Specified use for short-term cash assistance clothes",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IHATYPE2": {
+        "label": "WR: Type of housing assistance program received",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Section 8",
+                "4": "Not sure/Don't know",
+                "-1": "Don't know",
+                "3": "Other housing program",
+                "2": "Other rental assistance",
+                "0": "Not answered",
+                "-2": "Refused"
+            }
+        }
+    },
+    "IREDSIGN": {
+        "label": "WR: Bene cut- rejected signed plan",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "IHAHOUS": {
+        "label": "WR: Source of non-Section 8 assist. - Housing authority",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IINCQCC": {
+        "label": "WR: Gov't asst. inquired about - Child care assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "IKIDOTH": {
+        "label": "WR: No AFDC- other",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "ICSCHAR": {
+        "label": "WR: Source of other benefit- Community/religious charity",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "ICSAGEN": {
+        "label": "WR: Source of help to obtain child support - CS agency",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes"
+            }
+        }
+    },
+    "ICSUPHYN": {
+        "label": "WR: Talked with child supp/welf office for child support",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "-2": "Refused",
+                "2": "No",
+                "-1": "Don't know",
+                "1": "Yes"
+            }
+        }
+    },
+    "IKIDIMMI": {
+        "label": "WR: No AFDC- immigration status",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "ININDN": {
+        "label": "WR: Reason didn't apply- Don't need any",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "ININDK": {
+        "label": "WR: Reason didn't apply - Didn't know I could",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IJHINT": {
+        "label": "WR: Interviewing assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes",
+                "2": "No",
+                "-1": "Don't know",
+                "-2": "Refused"
+            }
+        }
+    },
+    "IPASTPUB": {
+        "label": "WR: Past Public Asst. recipiency",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "1": "Yes",
+                "2": "No",
+                "-2": "Refused",
+                "-1": "Don't know"
+            }
+        }
+    },
+    "INOTBANK": {
+        "label": "WR: AFDC cut- bank eligibility",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IREQCS": {
+        "label": "WR: Reported community service/workfare",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "2": "No",
+                "0": "Not answered",
+                "-2": "Refused",
+                "-1": "Don't know",
+                "1": "Yes"
+            }
+        }
+    },
+    "ININOTHH": {
+        "label": "WR: Item WR108 DKs and Refusals",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-2": "Refused",
+                "-1": "Don't know",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IFAVOU": {
+        "label": "WR: Type of food-related assist. rec'd.-voucher/money",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "1": "Yes",
+                "0": "Not answered",
+                "2": "No",
+                "-2": "Refused"
+            }
+        }
+    },
+    "IJHOJS": {
+        "label": "WR: Other specific job training assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "2": "No",
+                "-2": "Refused",
+                "-1": "Don't know",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IREDLIMT": {
+        "label": "WR: Bene cut- exceeded time limit",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "ICASHSC": {
+        "label": "WR: Source of short-term cash assistance",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "0": "Not answered",
+                "3": "Someplace else",
+                "2": "Family or friends",
+                "-2": "Refused",
+                "1": "Government agency"
+            }
+        }
+    },
+    "ICCDAYC": {
+        "label": "WR: Types of child care paid for by govt-day care",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-2": "Refused",
+                "1": "Yes",
+                "2": "No",
+                "-1": "Don't know",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IREDOTH": {
+        "label": "WR: Bene cut- other reason",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not answered"
+            }
+        }
+    },
+    "IPASTMON": {
+        "label": "WR: Month of past Public Asst recipiency",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not answered",
+                "-1": "Don't know",
+                "-2": "Refused"
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "12",
+                    "description": "Month"
+                }
+            ]
+        }
+    },
+    "ICASHUSE": {
+        "label": "WR: Use specified for short-term cash assistance?",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Don't know",
+                "2": "Whatever was needed",
+                "-2": "Refused",
+                "0": "Not answered",
+                "1": "Particular use"
+            }
+        }
+    }
+}

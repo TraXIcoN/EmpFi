@@ -1,0 +1,2660 @@
+{
+    "for": {
+        "label": "Census API FIPS 'for' clause",
+        "concept": "Census API Geography Specification",
+        "predicateType": "fips-for",
+        "group": "N/A",
+        "limit": 0,
+        "predicateOnly": true
+    },
+    "in": {
+        "label": "Census API FIPS 'in' clause",
+        "concept": "Census API Geography Specification",
+        "predicateType": "fips-in",
+        "group": "N/A",
+        "limit": 0,
+        "predicateOnly": true
+    },
+    "ucgid": {
+        "label": "Uniform Census Geography Identifier clause",
+        "concept": "Census API Geography Specification",
+        "predicateType": "ucgid",
+        "group": "N/A",
+        "limit": 0,
+        "predicateOnly": true
+    },
+    "TM9394": {
+        "label": "Do You Have a Copy of the 1994 Fed. Tax",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not Appl.",
+                "2": "No"
+            }
+        }
+    },
+    "TM8064": {
+        "label": "Pers. No. of Other Owner of Bus. 2 Who R",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "899",
+                    "description": "Pers. Number"
+                }
+            ]
+        }
+    },
+    "TM9392": {
+        "label": "Did _ File a Fed. Inc. Tax Return for 19",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "2": "No  Skip to Tm9486",
+                "1": "Yes",
+                "0": "Not Appl."
+            }
+        }
+    },
+    "TM8062": {
+        "label": "Chk. Item T4 for Bus. 2 Has Information",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "2": "No  Skip to Tm8068",
+                "0": "Not Appl."
+            }
+        }
+    },
+    "TM9390": {
+        "label": "Chk. Item T12 Has Tax Information for _",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "2": "No",
+                "0": "Not Appl.",
+                "1": "Yes  Skip to Tm9486"
+            }
+        }
+    },
+    "TM8060": {
+        "label": "Chk. Item T3 for Bus. 2 Bus. 2 Id Number",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-3": "Not Listed on CC",
+                "00": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "9",
+                    "description": "Id No. of Business"
+                }
+            ]
+        }
+    },
+    "RRP": {
+        "label": "Rel. to Ref. Person",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Hshld. Ref. Person, Living With Rel.s",
+                "7": "Nonrel. of Hshld. Ref. Pers. and Not Re",
+                "2": "Hshld. Ref. Pers. Living Alone or With O",
+                "4": "Child of Hshld. Ref. Person",
+                "6": "Nonrel. of Hshld. Ref. Pers. But Relate",
+                "0": "Not a Sample Pers. in This Month",
+                "3": "Spouse of Hshld. Ref. Person",
+                "5": "Other Rel. of Hshld. Ref. Person"
+            }
+        }
+    },
+    "ETHNICTY": {
+        "label": "Eth. Origin",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "08": "Dutch",
+                "03": "Irish",
+                "06": "Scottish",
+                "07": "Polish",
+                "19": "Central or South American Spanish Speaki",
+                "10": "Norwegian",
+                "12": "Ukrainian",
+                "04": "French",
+                "39": "Dont Know",
+                "02": "English",
+                "14": "Mexicanamerican",
+                "13": "Welsh",
+                "15": "Chicano",
+                "11": "Russian",
+                "01": "German",
+                "18": "Cuban",
+                "09": "Swedish",
+                "30": "Another Grp. Not Listed",
+                "20": "Other Spanish",
+                "05": "Italian",
+                "16": "Mexican",
+                "21": "Afroamerican Black or Negro",
+                "17": "Puerto Rican"
+            }
+        }
+    },
+    "TM8108": {
+        "label": "Pers. No. of Other Hshld. Member Who Was",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "899",
+                    "description": "Pers. Number"
+                }
+            ]
+        }
+    },
+    "TM8106": {
+        "label": "Were Any Other Members of This Hshld. Pa",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "01": "Yes",
+                "-1": "Dont Know Skip to Tm8116",
+                "02": "No  Skip to Tm8116",
+                "00": "Not Appl."
+            }
+        }
+    },
+    "TM8104": {
+        "label": "Chk. Item T5 for Bus. 1 Was Bus. 1 a Sol",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes  Skip to Tm8118",
+                "2": "No",
+                "0": "Not Appl."
+            }
+        }
+    },
+    "ID": {
+        "label": "Sample Unit Id. This Id. Is Created by S",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "range": [
+                {
+                    "min": "1074034",
+                    "max": "999369802",
+                    "description": "Continuous values of ID"
+                }
+            ]
+        }
+    },
+    "TM9434": {
+        "label": "How Much Were _ and _ Husbands/wifes Ite",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-00001": "Dont Know",
+                "000015": "22000+",
+                "000003": "4000  4999",
+                "000001": "1  2999",
+                "000014": "17000  21999",
+                "00000": "Not Appl.",
+                "000009": "10000  10999",
+                "000013": "14000  16999",
+                "000012": "13000  13999",
+                "000010": "11000  11999",
+                "-00002": "Refused Skip to Tm9458",
+                "000011": "12000  12999",
+                "000008": "9000  9999",
+                "000002": "3000  3999",
+                "000006": "7000  7999",
+                "000005": "6000  6999",
+                "000007": "8000  8999",
+                "000004": "5000  5999"
+            }
+        }
+    },
+    "TM9398": {
+        "label": "What Were the Total No. of Exemp Tions",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "02": "2 Exemptions",
+                "04": "6 or More Exemptions",
+                "01": "1 Exemption Skip to Tm9420",
+                "-1": "Dont Know",
+                "03": "35 Exemptions"
+            }
+        }
+    },
+    "TM8068": {
+        "label": "What Was the Form of Bus. 2  Was It a S",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "03": "Corporation",
+                "01": "Sole Proprietorship",
+                "02": "Partnership",
+                "00": "Not Appl.",
+                "-1": "Dont Know"
+            }
+        }
+    },
+    "TM9432": {
+        "label": "Chk. Item T16 Is Schedule A, Itemized De",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not Appl.",
+                "2": "No  Skip to Tm9446"
+            }
+        }
+    },
+    "TM9396": {
+        "label": "What Was _ Filing Stat. on _ 1994 Fed. T",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "00": "Not Appl.",
+                "02": "Married, Filing a Joint Return",
+                "03": "Married, Filing Separately",
+                "04": "Unmarried Head of Hshld. or Qualifying W",
+                "01": "Single Taxpayer",
+                "06": "Dont Know"
+            }
+        }
+    },
+    "TM8066": {
+        "label": "Bus. Id No. of Bus. 2 for Other Owner Wh",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-3": "None  Skip to Tm8276",
+                "00": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "9",
+                    "description": "Id No. of Bus.  Skip to Tm8276"
+                }
+            ]
+        }
+    },
+    "TM8220": {
+        "label": "Amt. of Net Inc. or Loss From Bus. 1 for",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-00001": "Dont Know",
+                "-00002": "Refused",
+                "000000": "Not Appl.",
+                "-00003": "None"
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "100000",
+                    "description": "Dollars in Inc. or Loss"
+                }
+            ]
+        }
+    },
+    "TM9430": {
+        "label": "Chk. Item T15 Is Form 1040 Marked in Tm9",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not Appl.",
+                "2": "No  Skip to Tm9462"
+            }
+        }
+    },
+    "TM9384": {
+        "label": "Keogh Asset Type Owned: Dont Know Types",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "No or Not Appl.",
+                "1": "Yes, Asset Type Unknown"
+            }
+        }
+    },
+    "TM8174": {
+        "label": "If We Were to Call You Back Later Could",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "2": "No",
+                "0": "Not Appl.",
+                "1": "Yes"
+            }
+        }
+    },
+    "TM8172": {
+        "label": "Chk. Item T6 for Bus. 2 Is Dont Know Mar",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not Appl.",
+                "2": "No  Skip to Tm8176",
+                "1": "Yes"
+            }
+        }
+    },
+    "TM9382": {
+        "label": "Keogh Asset Type Owned: Other Assets",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes, Asset Owned",
+                "0": "No or Not Appl."
+            }
+        }
+    },
+    "TM9380": {
+        "label": "Keogh Asset Type Owned: Stocks or Mutual",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes, Asset Owned",
+                "0": "No or Not Appl."
+            }
+        }
+    },
+    "TM8170": {
+        "label": "What Were the Total Expenses of Bus. 2 i",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-00002": "Refused",
+                "-00001": "Dont Know",
+                "000000": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "100000",
+                    "description": "Dollars in Total Expenses"
+                }
+            ]
+        }
+    },
+    "PNUM": {
+        "label": "Pers. Number",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "range": [
+                {
+                    "min": "101",
+                    "max": "862",
+                    "description": "Continuous values of PNUM"
+                }
+            ]
+        }
+    },
+    "TM8218": {
+        "label": "Pers. No. of Second Coowner of Bus. 1",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "899",
+                    "description": "Pers. Number"
+                }
+            ]
+        }
+    },
+    "TM9428": {
+        "label": "Chk. Item T14 Does the Respondent Have a",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not Appl.",
+                "1": "Yes",
+                "2": "No"
+            }
+        }
+    },
+    "HIGRADE": {
+        "label": "What Is the Highest Grade or Yr. of Reg.",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "00": "Not Appl. If Under 15, Did Not Att. or A"
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "8",
+                    "description": "Elementary"
+                },
+                {
+                    "min": "9",
+                    "max": "12",
+                    "description": "High School"
+                },
+                {
+                    "min": "21",
+                    "max": "26",
+                    "description": "Coll."
+                }
+            ]
+        }
+    },
+    "TM8214": {
+        "label": "Amt. of Net Inc. or Loss From Bus. 1 for",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-00003": "None",
+                "000000": "Not Appl.",
+                "-00002": "Refused",
+                "-00001": "Dont Know"
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "100000",
+                    "description": "Dollars in Inc. or Loss"
+                }
+            ]
+        }
+    },
+    "TM9424": {
+        "label": "Did the Respondent File in 1994 a Schedu",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "02": "No",
+                "-1": "Dont Know",
+                "01": "Yes",
+                "00": "Not Appl."
+            }
+        }
+    },
+    "TM8212": {
+        "label": "Pers. No. of First Coowner of Bus. 1",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "899",
+                    "description": "Pers. Number"
+                }
+            ]
+        }
+    },
+    "TM9422": {
+        "label": "Did the Respondent File in 1994 a Schedu",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Dont Know",
+                "01": "Yes",
+                "00": "Not Appl.",
+                "02": "No"
+            }
+        }
+    },
+    "TM9420": {
+        "label": "Did _ File Form 1040 Long Form or One of",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "01": "Form 1040",
+                "00": "Not Appl.",
+                "02": "Form 1040a  Skip to Tm9428",
+                "-1": "Dont Know  Skip to Tm9428",
+                "03": "Form 1040ez  Skip to Tm9428"
+            }
+        }
+    },
+    "TM8210": {
+        "label": "Apart From the Net Inc. Already Reported",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "02": "No  Skip to Tm8274",
+                "-1": "Dont Know  Skip to Tm8274",
+                "01": "Yes",
+                "00": "Not Appl."
+            }
+        }
+    },
+    "TM9388": {
+        "label": "How Much Did _ Contribute to a 401k Plan",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000000": "Not Appl.",
+                "-00002": "Refused",
+                "-00001": "Dont Know",
+                "-00003": "None"
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "30000",
+                    "description": "Total Amount"
+                }
+            ]
+        }
+    },
+    "TM9385": {
+        "label": "Are the Names of Any Emp.s Listed for th",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not Appl.",
+                "2": "No  Skip to Tm9390",
+                "1": "Yes"
+            }
+        }
+    },
+    "TM8176": {
+        "label": "Chk. Item T7 for Bus. 2 Was Bus. 2 a Sol",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes  Skip to Tm8276",
+                "0": "Not Appl.",
+                "2": "No"
+            }
+        }
+    },
+    "TM9386": {
+        "label": "During 1994, Did _ Participate in a Sala",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "00": "Not Appl.",
+                "01": "Yes",
+                "02": "No  Skip to Tm9390",
+                "-1": "Dont Know  Skip to Tm9390"
+            }
+        }
+    },
+    "ROTATION": {
+        "label": "Rotation Group",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "4": "Intv. Month: August 1995",
+                "3": "Intv. Month: July 1995",
+                "1": "Intv. Month: September 1995",
+                "2": "Intv. Month: June 1995"
+            }
+        }
+    },
+    "TM9450": {
+        "label": "On _ Form 1040, Did _ and _ Husband/wife",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "2": "No",
+                "0": "Not Appl.",
+                "1": "Yes"
+            }
+        }
+    },
+    "SEX": {
+        "label": "Sex",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Male",
+                "2": "Female"
+            }
+        }
+    },
+    "TM9338": {
+        "label": "How Much Did _ Withdraw From Ira Accts.",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-0002": "Refused",
+                "00000": "Not Appl.",
+                "-0001": "Dont Know"
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "30000",
+                    "description": "Dollars in Withdrawals"
+                }
+            ]
+        }
+    },
+    "TM8126": {
+        "label": "Chk. Item T7 for Bus. 1 Was Bus. 1 a Sol",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes  Skip to Tm8274",
+                "0": "Not Appl.",
+                "2": "No"
+            }
+        }
+    },
+    "TM9336": {
+        "label": "Did _ Make Any Withdrawals From _ Ira Ac",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "01": "Yes",
+                "-1": "Dont Know  Skip to Tm9340",
+                "00": "Not Appl.",
+                "02": "No  Skip to Tm9340"
+            }
+        }
+    },
+    "TM9458": {
+        "label": "Chk. Item T17 Is Schedule D, Capital Gai",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "2": "No  Skip to Tm9462",
+                "0": "Not Appl.",
+                "1": "Yes"
+            }
+        }
+    },
+    "TM8006": {
+        "label": "How Many Different Businesses Did _ Own",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "03": "3 + Businesses",
+                "01": "1 Business",
+                "02": "2 Businesses",
+                "00": "Not Appl."
+            }
+        }
+    },
+    "TM9334": {
+        "label": "How Much Were _ Contributions to Ira Acc",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-0001": "Dont Know",
+                "00000": "Not Appl.",
+                "-0002": "Refused"
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "30000",
+                    "description": "Dollars in Contributions"
+                }
+            ]
+        }
+    },
+    "TM8124": {
+        "label": "If We Were to Call You Back Later Could",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "2": "No",
+                "1": "Yes",
+                "0": "Not Appl."
+            }
+        }
+    },
+    "TM8004": {
+        "label": "Did _ Own and Operate a Bus. At Any Time",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "2": "No  Skip to Tm9330",
+                "0": "Not Appl."
+            }
+        }
+    },
+    "TM9332": {
+        "label": "Did _ Make Any Contributions to Ira Acct",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "02": "No  Skip to Tm9336",
+                "00": "Not Appl.",
+                "01": "Yes",
+                "-1": "Dont Know  Skip to Tm9336"
+            }
+        }
+    },
+    "TM8122": {
+        "label": "Chk. Item T6 for Bus. 1 Is Dont Know Mar",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not Appl.",
+                "2": "No  Skip to Tm8126"
+            }
+        }
+    },
+    "TM8002": {
+        "label": "Chk. Item T2 Were Intv.s Obtained for _",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "2": "No",
+                "1": "Yes  Skip to Tm9330",
+                "0": "Not Appl."
+            }
+        }
+    },
+    "TM9330": {
+        "label": "Does _ Have An Individual Ret. Acct. Ira",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "02": "No  Skip to Tm9358",
+                "-1": "Dont Know  Skip to Tm9358",
+                "00": "Not Appl.",
+                "01": "Yes"
+            }
+        }
+    },
+    "TM8120": {
+        "label": "What Were the Total Expenses of Bus. 1 i",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-00002": "Refused",
+                "000000": "Not Appl.",
+                "-00001": "Dont Know"
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "100000",
+                    "description": "Dollars in Total Expenses"
+                }
+            ]
+        }
+    },
+    "TM9452": {
+        "label": "What Was the Amt. of the Elderly or Disa",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "00003": "500+",
+                "00001": "199",
+                "00002": "100499",
+                "-0002": "Refused",
+                "00000": "Not Appl.",
+                "-0001": "Dont Know"
+            }
+        }
+    },
+    "TM8000": {
+        "label": "Chk. Item T1 Did the Respondent Own At L",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not Appl.",
+                "1": "Yes  Skip to Tm8006",
+                "2": "No"
+            }
+        }
+    },
+    "TM8070": {
+        "label": "Was Bus. 2 Primarily Located in _ Own Ho",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not Appl.",
+                "1": "Own home",
+                "2": "Somewhere else"
+            }
+        }
+    },
+    "FINALWGT": {
+        "label": "Person Weight (FINALWGT)",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "is-weight": true,
+        "values": {
+            "range": [
+                {
+                    "min": "0.0",
+                    "max": "3.2651976E8",
+                    "description": "Continuous values of FINALWGT"
+                }
+            ]
+        }
+    },
+    "TMEBCNT": {
+        "label": "No. of Items With Data on the Annual Inc",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "range": [
+                {
+                    "min": "0",
+                    "max": "48",
+                    "description": "Continuous values of TMEBCNT"
+                }
+            ]
+        }
+    },
+    "TM9448": {
+        "label": "What Was the Amt. of the Child and Depen",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000004": "150199",
+                "000013": "700799",
+                "000011": "500599",
+                "000005": "200249",
+                "00000": "Not Appl.",
+                "000001": "149",
+                "000007": "300349",
+                "000008": "350399",
+                "000003": "100149",
+                "-00001": "Dont Know",
+                "000009": "400449",
+                "000006": "250299",
+                "000014": "800+",
+                "-00002": "Refused",
+                "000002": "5099",
+                "000012": "600699",
+                "000010": "450499"
+            }
+        }
+    },
+    "TM8118": {
+        "label": "What Were the Gross Receipts of Bus. 1 i",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-00002": "Refused",
+                "-00001": "Dont Know",
+                "000000": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "100000",
+                    "description": "Dollars in Gross Receipts"
+                }
+            ]
+        }
+    },
+    "TM9446": {
+        "label": "On _ Form 1040, Did _ and _ Husband/wife",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "0": "Not Appl.",
+                "2": "No"
+            }
+        }
+    },
+    "TM8116": {
+        "label": "What Percentage of Bus. 1 Did _ Own in _",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Dont Know",
+                "00": "Not Appl.",
+                "01": "125 Percent",
+                "03": "50 100 Percent",
+                "02": "26 49 Percent"
+            }
+        }
+    },
+    "TM8114": {
+        "label": "What Percentage of Bus. 1 Was Owned by M",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-1": "Dont Know",
+                "00": "Not Appl.",
+                "02": "51 100 Percent",
+                "01": "1 50 Percent"
+            }
+        }
+    },
+    "TM8112": {
+        "label": "Was This Bus. 1 Owned Entirely by Member",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes  Skip to Tm8116",
+                "0": "Not Appl.",
+                "2": "No"
+            }
+        }
+    },
+    "TM8110": {
+        "label": "Pers. No. of Other Hshld. Member Who Was",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "899",
+                    "description": "Pers. Number"
+                }
+            ]
+        }
+    },
+    "TM9350": {
+        "label": "Ira Asset Type Owned: U.S. Savings Bonds",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes, Asset Owned",
+                "0": "No or Not Appl."
+            }
+        }
+    },
+    "TM9472": {
+        "label": "Did _ Claim An Earned Inc. Credit on _ 1",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "01": "Yes",
+                "00": "Not Appl.",
+                "02": "No  Skip to Tm9486",
+                "-1": "Dont Know  Skip to Tm9486"
+            }
+        }
+    },
+    "TM8262": {
+        "label": "Pers. No. of First Coowner of Bus. 2",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "899",
+                    "description": "Pers. Number"
+                }
+            ]
+        }
+    },
+    "TM8020": {
+        "label": "Was Bus. 1 Primarily Located in _ Own Ho",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not Appl.",
+                "1": "Own home",
+                "2": "Somewhere else"
+            }
+        }
+    },
+    "TM8260": {
+        "label": "Apart From the Net Inc. Already Reported",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "02": "No  Skip to Tm8276",
+                "01": "Yes",
+                "-1": "Dont Know  Skip to Tm8276",
+                "00": "Not Appl."
+            }
+        }
+    },
+    "TM9358": {
+        "label": "Does _ Have a Keogh Acct. in _ Own Name",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "00": "Not Appl.",
+                "02": "No  Skip to Tm9385",
+                "01": "Yes",
+                "-1": "Dont Know  Skip to Tm9385"
+            }
+        }
+    },
+    "TM9356": {
+        "label": "Ira Asset Type Owned: Dont Know Types of",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "No or Not Appl.",
+                "1": "Yes, Asset Type Unknown"
+            }
+        }
+    },
+    "TM8268": {
+        "label": "Pers. No. of Second Coowner of Bus. 2",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "899",
+                    "description": "Pers. Number"
+                }
+            ]
+        }
+    },
+    "TM9354": {
+        "label": "Ira Asset Type Owned: Other Assets",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "No or Not Appl.",
+                "1": "Yes, Asset Owned"
+            }
+        }
+    },
+    "TM9352": {
+        "label": "Ira Asset Type Owned: Stocks or Mutual F",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes, Asset Owned",
+                "0": "No or Not Appl."
+            }
+        }
+    },
+    "TM8264": {
+        "label": "Amt. of Net Inc. or Loss From Bus. 2 for",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000000": "Not Appl.",
+                "-00001": "Don T Know",
+                "-00002": "Refused",
+                "-00003": "None"
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "100000",
+                    "description": "Dollars in Inc. or Loss"
+                }
+            ]
+        }
+    },
+    "TM9474": {
+        "label": "What Was the Amt. of Earned Inc. Credit",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000012": "$550 $599",
+                "000021": "$1000 or More",
+                "000013": "$600 $649",
+                "000015": "$700 $749",
+                "000009": "$400 $449",
+                "000002": "$50 $99",
+                "000008": "$350 $399",
+                "000019": "$900 $949",
+                "000020": "$950 $999",
+                "000003": "$100 $149",
+                "000014": "$650 $699",
+                "000017": "$800 $849",
+                "-00002": "Refused",
+                "000001": "$1 $49",
+                "000011": "$500 $549",
+                "000007": "$300 $349",
+                "000010": "$450 $499",
+                "000004": "$150 $199",
+                "000000": "Not Appl.",
+                "000005": "$200 $249",
+                "-00001": "Dont Know",
+                "000018": "$850 $899",
+                "000006": "$250 $299",
+                "000016": "$750 $799"
+            }
+        }
+    },
+    "TM9460": {
+        "label": "How Much Were _ and _ Husband /wifes Cap",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000006": "700999",
+                "000005": "500699",
+                "000008": "13001999",
+                "-00002": "Refused",
+                "000003": "200299",
+                "000014": "15000+",
+                "000004": "300499",
+                "000001": "199",
+                "000000": "Not Appl.",
+                "000010": "30003999",
+                "000002": "100199",
+                "000013": "1000014999",
+                "000011": "40005999",
+                "000009": "20002999",
+                "-00001": "Dont Know",
+                "000007": "10001299",
+                "000015": "Losses 4 or Less",
+                "000012": "60009999",
+                "-00003": "None"
+            }
+        }
+    },
+    "TM9340": {
+        "label": "Including All Ira Accts. in _ Own Name,",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "00000": "Not Appl.",
+                "-0001": "Dont Know",
+                "-0002": "Refused"
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "30000",
+                    "description": "Dollars in Earnings"
+                }
+            ]
+        }
+    },
+    "ITEM36B": {
+        "label": "Hshld. Intv. Stat. Code",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "24": "Moved, Add. Unknown",
+                "03": "Temply. Absent",
+                "22": "Deleted Sample Adjust., Error",
+                "01": "Intved.",
+                "23": "Entire Hshld. Deceased, Moved Out of Cou",
+                "06": "Other Type A",
+                "04": "Refused",
+                "16": "Type B Entire HH Instit. or Temply. Inel",
+                "25": "Moved within country beyond limit",
+                "05": "Unable To Locate",
+                "02": "No One Home",
+                "28": "Merged HHLDS across panels",
+                "26": "All Sample Pers. Relisted on New CC"
+            }
+        }
+    },
+    "ENTRY": {
+        "label": "Entry Add. Id Add. of the Hshld. That Th",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "range": [
+                {
+                    "min": "11",
+                    "max": "84",
+                    "description": "Continuous values of ENTRY"
+                }
+            ]
+        }
+    },
+    "PINX": {
+        "label": "Pers. Index From Core Not to Be Used for",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "range": [
+                {
+                    "min": "1",
+                    "max": "22",
+                    "description": "Continuous values of PINX"
+                }
+            ]
+        }
+    },
+    "MS": {
+        "label": "Marital Stat.",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "4": "Divorced",
+                "0": "Not a Sample Pers. in This Month",
+                "5": "Separated",
+                "2": "Married, spouse absent",
+                "3": "Widowed",
+                "1": "Married, spouse present",
+                "6": "Never Married"
+            }
+        }
+    },
+    "PNPT": {
+        "label": "Pers. No. of Parent",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "999": "Not Appl.",
+                "000": "Not a Sample Pers. in This Month"
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "998",
+                    "description": "Pers. No. of Parent"
+                }
+            ]
+        }
+    },
+    "TMPICNT": {
+        "label": "No. of Items With Data on the Taxes Top.",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "range": [
+                {
+                    "min": "0",
+                    "max": "35",
+                    "description": "Continuous values of TMPICNT"
+                }
+            ]
+        }
+    },
+    "SUSEQNUM": {
+        "label": "Seq. No. of Sample Unit Prim. Sort Key N",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "range": [
+                {
+                    "min": "1",
+                    "max": "18385",
+                    "description": "Continuous values of SUSEQNUM"
+                }
+            ]
+        }
+    },
+    "TM8018": {
+        "label": "What Was the Form of Bus. 1 Was It a Sol",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "01": "Sole Proprietorship",
+                "-1": "Dont Know",
+                "00": "Not Appl.",
+                "02": "Partnership",
+                "03": "Corporation"
+            }
+        }
+    },
+    "TM8258": {
+        "label": "Chk. Item T8 for Bus. 2 Were Any Other H",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "2": "No  Skip to Tm8276",
+                "0": "Not Appl.",
+                "1": "Yes"
+            }
+        }
+    },
+    "TM8016": {
+        "label": "Bus. Id No. of Bus. 1 for Other Owner Wh",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-3": "None  Skip to Tm8274",
+                "00": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "9",
+                    "description": "Id No. of Bus.  Skip to Tm8274"
+                }
+            ]
+        }
+    },
+    "TM9348": {
+        "label": "Ira Asset Type Owned: Municipal or Corp.",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "No or Not Appl.",
+                "1": "Yes, Asset Owned"
+            }
+        }
+    },
+    "TM8014": {
+        "label": "Pers. No. of Other Owner of Bus. 1 Who R",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "899",
+                    "description": "Pers. Number"
+                }
+            ]
+        }
+    },
+    "TM9466": {
+        "label": "Chk. Item T18 Amt. of Adjusted Gross Inc",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not Appl.",
+                "1": "23, 050 or More Skip to Tm9486",
+                "2": "Less Than $23, 050"
+            }
+        }
+    },
+    "TM8256": {
+        "label": "If We Were to Call Back Later Could You",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes",
+                "2": "No",
+                "0": "Not Appl."
+            }
+        }
+    },
+    "GRDCMPL": {
+        "label": "Did He/she Complete That Grade",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not Appl.",
+                "2": "No",
+                "1": "Yes"
+            }
+        }
+    },
+    "TM9346": {
+        "label": "Ira Asset Type Owned: U.S. Gov. Securiti",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "No or Not Appl.",
+                "1": "Yes, Asset Owned"
+            }
+        }
+    },
+    "TM8012": {
+        "label": "Chk. Item T4 for Bus. 1 Has Information",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not Appl.",
+                "2": "No  Skip to Tm8018",
+                "1": "Yes"
+            }
+        }
+    },
+    "TM9464": {
+        "label": "What Was _ and _ Husbands/wifes Net Tax",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000012": "[900999]",
+                "000002": "[5099]",
+                "-00001": "Dont Know",
+                "000009": "[600699]",
+                "000008": "[500599]",
+                "000019": "[22002399]",
+                "000020": "[24002599]",
+                "000025": "[40004499]",
+                "000001": "[149]",
+                "000022": "[28002999]",
+                "000029": "[60006499]",
+                "000032": "[75007999]",
+                "000007": "[400499]",
+                "000031": "[70007499]",
+                "000030": "[65006999]",
+                "000034": "[1000013999]",
+                "000018": "[20002199]",
+                "000016": "[16001799]",
+                "000004": "[150199]",
+                "000026": "[45004999]",
+                "000010": "[700799]",
+                "000013": "[10001199]",
+                "000011": "[800899]",
+                "000003": "[100149]",
+                "000024": "[35003999]",
+                "000006": "[300399]",
+                "000027": "[50005499]",
+                "000017": "[18001999]",
+                "000015": "[14001599]",
+                "-00002": "Refused",
+                "000021": "[26002799]",
+                "000000": "Not Appl.",
+                "-00003": "None",
+                "000014": "[12001399]",
+                "000035": "[14000 + ]",
+                "000033": "[80009999]",
+                "000023": "[30003499]",
+                "000028": "[55005999]",
+                "000005": "[200299]"
+            }
+        }
+    },
+    "TM9344": {
+        "label": "Ira Asset Type Owned: Money Market Funds",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes, Asset Owned",
+                "0": "No or Not Appl."
+            }
+        }
+    },
+    "TM8010": {
+        "label": "Chk. Item T3 for Bus. 1 Bus. 1 Id Number",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-3": "Not Listed on CC",
+                "00": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "9",
+                    "description": "Id No. of Business"
+                }
+            ]
+        }
+    },
+    "TM8252": {
+        "label": "Respondents Net Inc. From Bus. 2 in 1994",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-00002": "Refused  Skip to Tm8258",
+                "000000": "Not Appl.",
+                "-00003": "None  Skip to Tm8258",
+                "-00001": "Dont Know"
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "100000",
+                    "description": "Net Inc. or Loss  Skip to Tm8258"
+                }
+            ]
+        }
+    },
+    "TM9462": {
+        "label": "What Was _ and _ Husbands/wifes Adjusted",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000013": "[35003999]",
+                "000016": "[50005499]",
+                "000003": "[12001399]",
+                "-00002": "Refused Skip to Tm9472",
+                "000024": "[1500019999]",
+                "-00001": "Dont Know Skip to Tm9472",
+                "000014": "[40004499]",
+                "000012": "[30003499]",
+                "000015": "[45004999]",
+                "000019": "[65006999]",
+                "000029": "[4000049999]",
+                "000006": "[18001999]",
+                "000022": "[80009999]",
+                "000030": "[5000059999]",
+                "000033": "[75000+]",
+                "000018": "[60006499]",
+                "000020": "[70007499]",
+                "000025": "[2000024999]",
+                "000023": "[1000014999]",
+                "000007": "[20002199]",
+                "000028": "[3500039999]",
+                "000021": "[75007999]",
+                "000002": "[10001199]",
+                "000001": "[1999]",
+                "000008": "[22002399]",
+                "000026": "[2500029999]",
+                "000009": "[24002599]",
+                "000000": "Not Appl.",
+                "-00003": "None Skip to Tm9472",
+                "000027": "[3000034999]",
+                "000004": "[14001599]",
+                "000010": "[26002799]",
+                "000031": "[6000069999]",
+                "000034": "4 or Less Losses",
+                "000011": "[28002999]",
+                "000017": "[55005999]",
+                "000005": "[16001799]",
+                "000032": "[7000074999]"
+            }
+        }
+    },
+    "TM9342": {
+        "label": "Ira Asset Type Owned: Certificates of De",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "No or Not Appl.",
+                "1": "Yes, Asset Owned"
+            }
+        }
+    },
+    "TM8162": {
+        "label": "Was Bus. 2 Owned Entirely by Members of",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not Appl.",
+                "2": "No",
+                "1": "Yes  Skip to Tm8166"
+            }
+        }
+    },
+    "TM9372": {
+        "label": "Keogh Asset Type Owned: Money Market Fun",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes, Asset Owned",
+                "0": "No or Not Appl."
+            }
+        }
+    },
+    "TM9494": {
+        "label": "Respondent Made Joint Prop. Taxes With:",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "899",
+                    "description": "Pers. Number"
+                }
+            ]
+        }
+    },
+    "TM8160": {
+        "label": "Pers. No. of Other Hshld. Member Who Was",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "899",
+                    "description": "Pers. Number"
+                }
+            ]
+        }
+    },
+    "TM9370": {
+        "label": "Keogh Asset Type Owned: Certificates of",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes, Asset Owned",
+                "0": "No or Not Appl."
+            }
+        }
+    },
+    "TM9492": {
+        "label": "Did _ Pay the 1994 Prop. Taxes Jointly W",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not Appl.",
+                "2": "No  Skip to Tm9498",
+                "1": "Yes"
+            }
+        }
+    },
+    "TM9490": {
+        "label": "Did _ Pay Any Prop. Taxes on _ Res. in 1",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "2": "No  End of Section",
+                "0": "Not Appl.",
+                "1": "Yes"
+            }
+        }
+    },
+    "STATE": {
+        "label": "Fips State Code",
+        "predicateType": "long",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "26": "Michigan",
+                "28": "Mississippi",
+                "15": "Hawaii",
+                "39": "Ohio",
+                "62": "Iowa, North Dakota, South Dakota",
+                "04": "Arizona",
+                "48": "Texas",
+                "54": "West Virginia",
+                "61": "Maine, Vermont",
+                "42": "Pennsylvania",
+                "44": "Rhode Island",
+                "49": "Utah",
+                "06": "California",
+                "08": "Colorado",
+                "53": "Washington",
+                "13": "Georgia",
+                "35": "New Mexico",
+                "36": "New York",
+                "41": "Oregon",
+                "24": "Maryland",
+                "25": "Massachusetts",
+                "27": "Minnesota",
+                "17": "Illinois",
+                "20": "Kansas",
+                "29": "Missouri",
+                "51": "Virginia",
+                "33": "New Hampshire",
+                "55": "Wisconsin",
+                "34": "New Jersey",
+                "40": "Oklahoma",
+                "63": "ALASKA, IDAHO, MONTANA, WYOMING",
+                "22": "Louisiana",
+                "01": "Alabama",
+                "05": "Arkansas",
+                "09": "Connecticut",
+                "31": "Nebraska",
+                "10": "Delaware",
+                "37": "North Carolina",
+                "11": "District of Columbia",
+                "45": "South Carolina",
+                "47": "Tennessee",
+                "32": "Nevada",
+                "12": "Florida",
+                "18": "Indiana",
+                "21": "Kentucky"
+            }
+        }
+    },
+    "WAVE": {
+        "label": "Wave of the Panel",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "range": [
+                {
+                    "min": "5",
+                    "max": "8",
+                    "description": "Continuous values of WAVE"
+                }
+            ]
+        }
+    },
+    "PPMIS5": {
+        "label": "Mthly. Pers. Intv. Stat.: Intv. Month",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "2": "Nonintv.",
+                "1": "Intv."
+            }
+        }
+    },
+    "PPMIS4": {
+        "label": "Mthly. Pers. Intv. Stat.: Ref. Mth. 4",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Intv.",
+                "2": "Nonintv."
+            }
+        }
+    },
+    "PPMIS3": {
+        "label": "Mthly. Pers. Intv. Stat.: Ref. Mth. 3",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "2": "Nonintv.",
+                "1": "Intv."
+            }
+        }
+    },
+    "PPMIS2": {
+        "label": "Mthly. Pers. Intv. Stat.: Ref. Mth. 2",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Intv.",
+                "2": "Nonintv."
+            }
+        }
+    },
+    "TM8208": {
+        "label": "Chk. Item T8 for Bus. 1 Were Any Other H",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not Appl.",
+                "1": "Yes",
+                "2": "No  Skip to Tm8274"
+            }
+        }
+    },
+    "PPMIS1": {
+        "label": "Mthly. Pers. Intv. Stat.: Ref. Mth. 1",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Intv.",
+                "2": "Nonintv."
+            }
+        }
+    },
+    "TM9418": {
+        "label": "What Was the Rel. of the Dependent Refer",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Parent",
+                "4": "OTHER",
+                "0": "Not Appl.",
+                "2": "Child",
+                "3": "Brother/sister"
+            }
+        }
+    },
+    "TM8206": {
+        "label": "If We Were to Call Back Later Could You",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not Appl.",
+                "1": "Yes",
+                "2": "No"
+            }
+        }
+    },
+    "TM9416": {
+        "label": "What Was the Rel. of the Dependent Refer",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "2": "Child",
+                "4": "OTHER",
+                "0": "Not Appl.",
+                "3": "Brother/sister",
+                "1": "Parent"
+            }
+        }
+    },
+    "TM9414": {
+        "label": "Did _ Claim Exemptions for Any Pers. Who",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not Appl.",
+                "1": "Yes",
+                "2": "No  Skip to Tm9420"
+            }
+        }
+    },
+    "TM8168": {
+        "label": "What Were the Gross Receipts of Bus. 2 i",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000000": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "100000",
+                    "description": "Dollars in Gross Receipts"
+                }
+            ]
+        }
+    },
+    "TM9378": {
+        "label": "Keogh Asset Type Owned: U.S. Savings Bon",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "No or Not Appl.",
+                "1": "Yes, Asset Owned"
+            }
+        }
+    },
+    "TM8202": {
+        "label": "Respondents Net Inc. From Bus. 1 in 1994",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000000": "Not Appl.",
+                "-00003": "None  Skip to Tm8208",
+                "-00002": "Refused  Skip to Tm8208",
+                "-00001": "Dont Know"
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "100000",
+                    "description": "Dollars in Inc. or Loss  Skip to Tm8208"
+                }
+            ]
+        }
+    },
+    "TM9412": {
+        "label": "No One in the Hshld. Besides the Respond",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not Appl.",
+                "1": "No One in the Household"
+            }
+        }
+    },
+    "TM8166": {
+        "label": "What Percentage of Bus. 2 Did _ Own in _",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "01": "1 25 Percent",
+                "02": "26 49 Percent",
+                "03": "50 100 Percent",
+                "00": "Not Appl.",
+                "-1": "Dont Know"
+            }
+        }
+    },
+    "TM9376": {
+        "label": "Keogh Asset Type Owned: Municipal or Cor",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "No or Not Appl.",
+                "1": "Yes, Asset Owned"
+            }
+        }
+    },
+    "TM9498": {
+        "label": "What Was the Prop. Tax Bill for _ Res. i",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000004": "Amt. From $300$399",
+                "000002": "Amt. From $100$199",
+                "000014": "Amt. From $1300$1499",
+                "000012": "Amt. From $1100$1199",
+                "000011": "Amt. From $1000$1099",
+                "-00002": "Refused",
+                "000001": "Amt. Under $100",
+                "000017": "Amt. From $2100 or More",
+                "000005": "Amt. From $400$499",
+                "000008": "Amt. From $700$799",
+                "000013": "Amt. From $1200$1299",
+                "000016": "Amt. From $1800$2099",
+                "-00001": "Dont Know",
+                "000015": "Amt. From $1500$1799",
+                "000010": "Amt. From $900$999",
+                "000003": "Amt. From $200$299",
+                "000007": "Amt. From $600$699",
+                "000009": "Amt. From $800$899",
+                "000000": "Not Appl.",
+                "000006": "Amt. From $500$599"
+            }
+        }
+    },
+    "TM9410": {
+        "label": "Beside _ Which Pers. in This Hshld. Did",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "899",
+                    "description": "Pers. Number"
+                }
+            ]
+        }
+    },
+    "TM8164": {
+        "label": "What Percentage of Bus. 2 Was Owned by M",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "00": "Not Appl.",
+                "01": "150 Percent",
+                "-1": "Dont Know",
+                "02": "51 100 Percent"
+            }
+        }
+    },
+    "TM9374": {
+        "label": "Keogh Asset Type Owned: U.S. Gov. Securi",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes, Asset Owned",
+                "0": "No or Not Appl."
+            }
+        }
+    },
+    "AGE": {
+        "label": "Age",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000": "Less Than 1 Full Year",
+                "084": "83+ Yrs. Topcoded"
+            }
+        }
+    },
+    "TM9496": {
+        "label": "Respondent Made Joint Prop. Taxes With:",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "899",
+                    "description": "Pers. Number"
+                }
+            ]
+        }
+    },
+    "TM9362": {
+        "label": "How Much Were _ Contributions to Keogh A",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "00000": "Not Appl.",
+                "-0001": "Dont Know",
+                "-0002": "Refused"
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "30000",
+                    "description": "Dollars in Contributions"
+                }
+            ]
+        }
+    },
+    "TM8270": {
+        "label": "Amt. of Net Inc. or Loss From Bus. 2 for",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000000": "Not Appl.",
+                "-00002": "Refused",
+                "-00003": "None",
+                "-00001": "Dont Know"
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "100000",
+                    "description": "Dollars in Inc. or Loss"
+                }
+            ]
+        }
+    },
+    "TM9360": {
+        "label": "Did _ Make Any Contributions to a Keogh",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "01": "Yes",
+                "-1": "Dont Know  Skip to Tm9364",
+                "02": "No  Skip to Tm9364",
+                "00": "Not Appl."
+            }
+        }
+    },
+    "ADDID": {
+        "label": "Cur. Add. Id.  This Fld. Diff. Hshlds.",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "range": [
+                {
+                    "min": "0",
+                    "max": "84",
+                    "description": "Continuous values of ADDID"
+                }
+            ]
+        }
+    },
+    "TM9408": {
+        "label": "Beside _ Which Pers. in This Hshld. Did",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "899",
+                    "description": "Pers. Number"
+                }
+            ]
+        }
+    },
+    "TM9406": {
+        "label": "Beside _ Which Pers. in This Hshld. Did",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "899",
+                    "description": "Pers. Number"
+                }
+            ]
+        }
+    },
+    "TM9404": {
+        "label": "Beside _ Which Pers. in This Hshld. Did",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "899",
+                    "description": "Pers. Number"
+                }
+            ]
+        }
+    },
+    "RACE": {
+        "label": "Race",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "4": "Asian or Pacific Islander",
+                "1": "White",
+                "2": "Black",
+                "3": "American Indian, Eskimo or Aleut"
+            }
+        }
+    },
+    "TM9402": {
+        "label": "Beside _ Which Pers. in This Hshld. Did",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "899",
+                    "description": "Pers. Number"
+                }
+            ]
+        }
+    },
+    "INTVW": {
+        "label": "Pers. Intv. Stat.",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "4": "Nonintv.  Type Z Other",
+                "3": "Nonintv.  Type Z Refusal",
+                "0": "Not Appl. Chld. Under 15 or Not in Sampl",
+                "1": "Intv. Self",
+                "2": "Intv. Proxy"
+            }
+        }
+    },
+    "TM8278": {
+        "label": "Respondents Net Inc. or Loss From Other",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-00002": "Refused",
+                "000000": "Not Appl.",
+                "-00003": "None",
+                "-00001": "Dont Know"
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "100000",
+                    "description": "Dollars in Inc. or Loss"
+                }
+            ]
+        }
+    },
+    "TM9488": {
+        "label": "Chk. Item T20 Intv. Stat. of _ Spouse",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "3": "Intv. for Spouse Already Conducted  End",
+                "0": "Not Appl.",
+                "1": "No Spouse in Household",
+                "2": "Intv. for Spouse Not Yet Conducted"
+            }
+        }
+    },
+    "TMIND2": {
+        "label": "Three Digit Ind. Code for Bus. 2 in Tm80",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Continuous values of TMIND2"
+            }
+        }
+    },
+    "TM9400": {
+        "label": "Chk. Item T13 No. of Cur. Hshld. Members",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "One  Skip to Tm9414",
+                "2": "Two or more",
+                "0": "Not Appl."
+            }
+        }
+    },
+    "TM9368": {
+        "label": "Including All Keogh Accts. in _ Own Name",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-0001": "Dont Know",
+                "00000": "Not Appl.",
+                "-0002": "Refused"
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "30000",
+                    "description": "Dollars in Earnings"
+                }
+            ]
+        }
+    },
+    "TM8158": {
+        "label": "Pers. No. of Other Hshld. Member Who Was",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "101",
+                    "max": "899",
+                    "description": "Pers. Number"
+                }
+            ]
+        }
+    },
+    "TM9486": {
+        "label": "Chk. Item T19 Housing Tenure: Respondent",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "3": "Occ. Without Cash Payment  End of Secti",
+                "2": "Rented for Cash  End of Section",
+                "1": "Owned or being bought",
+                "0": "Not Appl."
+            }
+        }
+    },
+    "TM8276": {
+        "label": "Chk. Item T10 Is the No. of Businesses M",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Not Appl.",
+                "1": "Yes",
+                "2": "No  Skip to Tm9330"
+            }
+        }
+    },
+    "TM8156": {
+        "label": "Were Any Other Members of This Hshld. Pa",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "01": "Yes",
+                "02": "No  Skip to Tm8166",
+                "00": "Not Appl.",
+                "-1": "Dont Know  Skip to Tm8166"
+            }
+        }
+    },
+    "TM9366": {
+        "label": "How Much Did _ Withdraw From Keogh Accts",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "-0002": "Refused",
+                "-0001": "Dont Know",
+                "00000": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "30000",
+                    "description": "Dollars in Withdrawals"
+                }
+            ]
+        }
+    },
+    "TMIND1": {
+        "label": "Three Digit Ind. Code for Bus. 1 in Tm80",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "0": "Continuous values of TMIND1"
+            }
+        }
+    },
+    "TM8274": {
+        "label": "Chk. Item T9 Did the Respondent Report a",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes Skip to Tm8060",
+                "0": "Not Appl.",
+                "2": "No  Skip to Tm9330"
+            }
+        }
+    },
+    "PNSP": {
+        "label": "Pers. No. of Spouse",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "000": "Not a Sample Pers. in This Month",
+                "999": "Not Appl."
+            },
+            "range": [
+                {
+                    "min": "1",
+                    "max": "998",
+                    "description": "Pers. No. of Spouse"
+                }
+            ]
+        }
+    },
+    "TM9364": {
+        "label": "Did _ Make Any Withdrawals From _ Keogh",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "00": "Not Appl.",
+                "02": "No  Skip to Tm9368",
+                "-1": "Dont Know  Skip to Tm9368",
+                "01": "Yes"
+            }
+        }
+    },
+    "TM8154": {
+        "label": "Chk. Item T5 for Bus. 2 Was Bus. 2 a Sol",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0,
+        "values": {
+            "item": {
+                "1": "Yes  Skip to Tm8168",
+                "2": "No",
+                "0": "Not Appl."
+            }
+        }
+    }
+}
