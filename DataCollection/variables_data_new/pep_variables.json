@@ -1,0 +1,137 @@
+{
+    "for": {
+        "label": "Census API FIPS 'for' clause",
+        "concept": "Census API Geography Specification",
+        "predicateType": "fips-for",
+        "group": "N/A",
+        "limit": 0,
+        "predicateOnly": true
+    },
+    "in": {
+        "label": "Census API FIPS 'in' clause",
+        "concept": "Census API Geography Specification",
+        "predicateType": "fips-in",
+        "group": "N/A",
+        "limit": 0,
+        "predicateOnly": true
+    },
+    "COUSUB": {
+        "label": "Minor Civil Division FIPS codee",
+        "concept": "Selectable Geographies",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "SUMLEV": {
+        "label": "Summary Level",
+        "concept": "Geographic Characteristics",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "STATE": {
+        "label": "State FIPS code",
+        "concept": "Selectable Geographies",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "GEONAME": {
+        "label": "Name of Geography",
+        "concept": "Geographic Characteristics",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0
+    },
+    "DATE_": {
+        "label": "Estimate Date",
+        "concept": "Estimate Variables",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "FUNCSTAT": {
+        "label": "Functional Status Code",
+        "concept": "Estimate Variables",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "PLACE": {
+        "label": "Place FIPS code",
+        "concept": "Selectable Geographies",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "DIVISION": {
+        "label": "Census Division code",
+        "concept": "Selectable Geographies",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "REGION": {
+        "label": "Census Region code",
+        "concept": "Selectable Geographies",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "POP": {
+        "label": "Resident population",
+        "concept": "Estimate Variables",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "LASTUPDATE": {
+        "label": "Last Update",
+        "concept": "Estimate Variables",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0
+    },
+    "NATION": {
+        "label": "National",
+        "concept": "Selectable Geographies",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "PRIMGEOFLAG": {
+        "label": "Primitive Geography Flag",
+        "concept": "Estimate Variables",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "DATE_DESC": {
+        "label": "Description of DATE values",
+        "concept": "Estimate Variables",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0
+    },
+    "UNIVERSE": {
+        "label": "Universe",
+        "concept": "Estimate Variables",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0
+    },
+    "CONCIT": {
+        "label": "Consolidated city FIPS code",
+        "concept": "Selectable Geographies",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "COUNTY": {
+        "label": "County FIPS code",
+        "concept": "Selectable Geographies",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    }
+}

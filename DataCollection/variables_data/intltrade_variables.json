@@ -1,0 +1,296 @@
+{
+    "IMPALL2009": {
+        "label": "General Imports Customs Value, All Commodities: 2009",
+        "concept": "Imports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "EXPMANF2009": {
+        "label": "Total Export Value, Manufactured Goods: 2009",
+        "concept": "Exports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "EXPALL2018": {
+        "label": "Total Export Value, All Commodities: 2018",
+        "concept": "Exports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "EXPALL2017": {
+        "label": "Total Export Value, All Commodities: 2017",
+        "concept": "Exports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "IMPMANF2009": {
+        "label": "General Imports Customs Value, Manufactured Goods: 2009",
+        "concept": "Imports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "COUNTRY": {
+        "label": "Country of origin/destination",
+        "concept": "Country",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0
+    },
+    "EXPALL2012": {
+        "label": "Total Export Value, All Commodities: 2012",
+        "concept": "Exports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "EXPALL2011": {
+        "label": "Total Export Value, All Commodities: 2011",
+        "concept": "Exports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "EXPALL2010": {
+        "label": "Total Export Value, All Commodities: 2010",
+        "concept": "Exports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "SCHEDULE": {
+        "label": "Schedule Number",
+        "concept": "Country",
+        "predicateType": "string",
+        "group": "N/A",
+        "limit": 0
+    },
+    "EXPALL2016": {
+        "label": "Total Export Value, All Commodities: 2016",
+        "concept": "Exports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "EXPALL2015": {
+        "label": "Total Export Value, All Commodities: 2015",
+        "concept": "Exports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "EXPALL2014": {
+        "label": "Total Export Value, All Commodities: 2014",
+        "concept": "Exports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "EXPALL2013": {
+        "label": "Total Export Value, All Commodities: 2013",
+        "concept": "Exports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "IMPALL2010": {
+        "label": "General Imports Customs Value, All Commodities: 2010",
+        "concept": "Imports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "IMPALL2011": {
+        "label": "General Imports Customs Value, All Commodities: 2011",
+        "concept": "Imports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "IMPALL2012": {
+        "label": "General Imports Customs Value, All Commodities: 2012",
+        "concept": "Imports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "IMPALL2013": {
+        "label": "General Imports Customs Value, All Commodities: 2013",
+        "concept": "Imports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "EXPMANF2011": {
+        "label": "Total Export Value, Manufactured Goods: 2011",
+        "concept": "Exports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "IMPALL2014": {
+        "label": "General Imports Customs Value, All Commodities: 2014",
+        "concept": "Imports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "EXPMANF2010": {
+        "label": "Total Export Value, Manufactured Goods: 2010",
+        "concept": "Exports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "IMPALL2015": {
+        "label": "General Imports Customs Value, All Commodities: 2015",
+        "concept": "Imports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "EXPMANF2013": {
+        "label": "Total Export Value, Manufactured Goods: 2013",
+        "concept": "Exports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "IMPALL2016": {
+        "label": "General Imports Customs Value, All Commodities: 2016",
+        "concept": "Imports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "EXPMANF2012": {
+        "label": "Total Export Value, Manufactured Goods: 2012",
+        "concept": "Exports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "IMPALL2017": {
+        "label": "General Imports Customs Value, All Commodities: 2017",
+        "concept": "Imports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "EXPMANF2015": {
+        "label": "Total Export Value, Manufactured Goods: 2015",
+        "concept": "Exports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "IMPALL2018": {
+        "label": "General Imports Customs Value, All Commodities: 2018",
+        "concept": "Imports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "EXPMANF2014": {
+        "label": "Total Export Value, Manufactured Goods: 2014",
+        "concept": "Exports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "EXPMANF2017": {
+        "label": "Total Export Value, Manufactured Goods: 2017",
+        "concept": "Exports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "EXPMANF2016": {
+        "label": "Total Export Value, Manufactured Goods: 2016",
+        "concept": "Exports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "EXPMANF2018": {
+        "label": "Total Export Value, Manufactured Goods: 2018",
+        "concept": "Exports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "EXPALL2009": {
+        "label": "Total Export Value, All Commodities: 2009",
+        "concept": "Exports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "IMPMANF2017": {
+        "label": "General Imports Customs Value, Manufactured Goods: 2017",
+        "concept": "Imports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "IMPMANF2018": {
+        "label": "General Imports Customs Value, Manufactured Goods: 2018",
+        "concept": "Imports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "IMPMANF2013": {
+        "label": "General Imports Customs Value, Manufactured Goods: 2013",
+        "concept": "Imports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "IMPMANF2014": {
+        "label": "General Imports Customs Value, Manufactured Goods: 2014",
+        "concept": "Imports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "IMPMANF2015": {
+        "label": "General Imports Customs Value, Manufactured Goods: 2015",
+        "concept": "Imports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "IMPMANF2016": {
+        "label": "General Imports Customs Value, Manufactured Goods: 2016",
+        "concept": "Imports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "IMPMANF2010": {
+        "label": "General Imports Customs Value, Manufactured Goods: 2010",
+        "concept": "Imports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "IMPMANF2011": {
+        "label": "General Imports Customs Value, Manufactured Goods: 2011",
+        "concept": "Imports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    },
+    "IMPMANF2012": {
+        "label": "General Imports Customs Value, Manufactured Goods: 2012",
+        "concept": "Imports",
+        "predicateType": "int",
+        "group": "N/A",
+        "limit": 0
+    }
+}
