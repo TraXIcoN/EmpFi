@@ -1,5 +1,3 @@
-╭─aditya@ADITYAs-MacBook-Pro ~/Documents/Coding/EmpFi/EmpFi/DataCollection ‹main●›
-╰─$ python extract_all_variables.py
 Variables fetched from http://api.census.gov/data/1986/cbp and saved as 'variables_data_new/1986_variables.json'.
 Variables fetched from http://api.census.gov/data/1987/cbp and saved as 'variables_data_new/1987_variables.json'.
 Variables fetched from http://api.census.gov/data/1988/cbp and saved as 'variables_data_new/1988_variables.json'.
