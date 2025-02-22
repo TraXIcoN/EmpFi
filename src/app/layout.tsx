@@ -2,6 +2,7 @@
 
 import { UserProvider } from "@auth0/nextjs-auth0/client";
 import Sidebar from "@/components/Sidebar";
+import { SidebarProvider } from "@/context/SidebarContext";
 import "./globals.css";
 
 export default function RootLayout({
@@ -13,10 +14,14 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-gray-100">
         <UserProvider>
-          <div className="flex h-screen">
-            <Sidebar />
-            <main className="flex-1 p-6">{children}</main>
-          </div>
+          <SidebarProvider>
+            <div className="flex min-h-screen">
+              <Sidebar />
+              <main className="flex-1 transition-all duration-300 ease-in-out">
+                {children}
+              </main>
+            </div>
+          </SidebarProvider>
         </UserProvider>
       </body>
     </html>

@@ -19,3 +19,52 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+main {
+  margin-left: 5rem; /* Default margin when sidebar is collapsed */
+  margin-right: 1rem; /* Add right margin for spacing */
+  margin-top: 1rem; /* Add top margin for spacing */
+  margin-bottom: 1rem; /* Add bottom margin for spacing */
+  transition: margin-left 300ms ease-in-out;
+}
+
+.sidebar-expanded main {
+  margin-left: 16rem; /* Margin when sidebar is expanded */
+}
+
+@layer utilities {
+  /* Desktop styles */
+  @media (min-width: 768px) {
+    aside {
+      position: fixed; /* Keep the sidebar fixed on desktop */
+      left: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 40;
+    }
+
+    main {
+      margin-left: 5rem; /* When collapsed */
+    }
+
+    .sidebar-expanded main {
+      margin-left: 16rem; /* When expanded */
+    }
+  }
+
+  /* Mobile styles */
+  @media (max-width: 767px) {
+    aside {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 40;
+    }
+
+    main {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+}
