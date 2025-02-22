@@ -36,7 +36,7 @@ def fetch_census_data(endpoint, variables):
     # Check if the request was successful
     if response.status_code == 200:
         data = response.json()
-        
+
         # Convert the data to a Pandas DataFrame
         df = pd.DataFrame(data[1:], columns=data[0])  # First row as header
         
