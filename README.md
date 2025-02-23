@@ -18,3 +18,7 @@ This is the backend branch of our repository, consisting of various technologies
 - **Python**: The primary programming language used for backend development.
 - **MongoDB**: A NoSQL database used for storing data.
 - **Redis**: An in-memory data structure store used for caching and real-time data processing.
+
+### Script Execution
+
+The script `challenge_optimized.py` contains functions for computing storefront impressions and visualizing results. To prevent automatic execution when imported, the main execution code is wrapped in an `if __name__ == "__main__":` block. This allows the functions to be imported without running the script automatically.
