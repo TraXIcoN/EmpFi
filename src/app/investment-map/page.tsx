@@ -3,7 +3,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import { MapContainer, GeoJSON, TileLayer, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, useMap } from "react-leaflet";
 import statesData from "@/data/us-states.json";
 import "leaflet/dist/leaflet.css";
 import { motion, AnimatePresence } from "framer-motion";
@@ -27,9 +27,12 @@ const MapContainerDynamic = dynamic(
   () => import("react-leaflet").then((mod) => mod.MapContainer),
   { ssr: false }
 );
-
 const TileLayerDynamic = dynamic(
   () => import("react-leaflet").then((mod) => mod.TileLayer),
+  { ssr: false }
+);
+const GeoJSONDynamic = dynamic(
+  () => import("react-leaflet").then((mod) => mod.GeoJSON),
   { ssr: false }
 );
 
@@ -648,7 +651,7 @@ const InvestmentMap = () => {
             className="rounded-lg shadow-2xl z-1"
           >
             <MapController selectedState={selectedState} map={map} />
-            <GeoJSON
+            <GeoJSONDynamic
               data={statesData as any}
               style={getStateStyle}
               onEachFeature={(feature, layer) => {

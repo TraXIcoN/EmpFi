@@ -10,12 +10,12 @@ interface TypewriterTextProps {
   delayBetween?: number;
 }
 
-export default function TypewriterText({
+const TypewriterText = ({
   sentences,
   typingSpeed = 50,
   deletingSpeed = 30,
   delayBetween = 2000,
-}: TypewriterTextProps) {
+}: TypewriterTextProps) => {
   const [displayedText, setDisplayedText] = useState("");
   const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -74,4 +74,6 @@ export default function TypewriterText({
       </span>
     </motion.div>
   );
-}
+};
+
+export default TypewriterText;

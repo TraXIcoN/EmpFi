@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
@@ -6,10 +8,7 @@ interface ImageCarouselProps {
   interval?: number;
 }
 
-export const ImageCarousel = ({
-  images,
-  interval = 5000,
-}: ImageCarouselProps) => {
+const ImageCarousel = ({ images, interval = 5000 }: ImageCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -43,3 +42,5 @@ export const ImageCarousel = ({
     </div>
   );
 };
+
+export default ImageCarousel;

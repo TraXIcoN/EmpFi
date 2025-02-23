@@ -1,18 +1,27 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect, useContext } from "react";
-import Lottie from "lottie-react";
-import { ImageCarousel } from "@/components/ImageCarousel";
+import { useRouter } from "next/navigation";
+import { useUser } from "@auth0/nextjs-auth0/client";
+import { Loader } from "@/components/Loader";
+
+// Fix dynamic imports
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+const TypewriterText = dynamic(() => import("../components/TypewriterText"), {
+  ssr: false,
+});
+const ImageCarousel = dynamic(() => import("../components/ImageCarousel"), {
+  ssr: false,
+});
+
+// Import animations
 import financialAnimation from "@/animations/financial.json";
 import analysisAnimation from "@/animations/magnifying.json";
 import portfolioAnimation from "@/animations/document.json";
 import insightsAnimation from "@/animations/future.json";
-import TypewriterText from "@/components/TypewriterText";
-import { useRouter } from "next/navigation";
-import { useUser } from "@auth0/nextjs-auth0/client";
-import { Loader } from "@/components/Loader";
 
 export default function Home() {
   const router = useRouter();
