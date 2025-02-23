@@ -10,6 +10,7 @@ import {
   MdMenu,
   MdChevronLeft,
   MdNewspaper,
+  MdPinDrop,
 } from "react-icons/md";
 import { useSidebar } from "@/context/SidebarContext";
 
@@ -43,17 +44,17 @@ export default function Sidebar() {
           transition-opacity duration-300
         `}
       >
-        {shouldExpand ? <MdChevronLeft size={20} /> : <MdMenu size={20} />}
+        {shouldExpand ? <MdPinDrop size={20} /> : <MdMenu size={20} />}
       </button>
 
       <div className={`p-4 ${shouldExpand ? "px-4" : "px-2"}`}>
         <h2
           className={`text-xl font-bold mb-4 overflow-hidden whitespace-nowrap
-          transition-all duration-300 ${
+          transition-all duration-300 pl-[10px] ${
             shouldExpand ? "opacity-100" : "opacity-0"
           }`}
         >
-          thefomofund.tech
+          Thefomofund.tech
         </h2>
       </div>
 

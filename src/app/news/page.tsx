@@ -88,7 +88,7 @@ function NewsPage() {
   }
 
   return (
-    <main className="min-h-screen bg-black py-6">
+    <main className="min-h-screen bg-black/40 backdrop-blur-sm py-6">
       <div className="max-w-6xl mx-auto px-4">
         <header className="text-center mb-8 border-b-2 border-gray-800 pb-4">
           <h1 className="font-serif text-5xl mb-2 text-white">
@@ -108,7 +108,7 @@ function NewsPage() {
             articles.map((article, index) => (
               <article
                 key={index}
-                className={`bg-gray-900 p-4 border border-gray-800 ${
+                className={`bg-black/60 backdrop-blur-sm p-4 border border-gray-800 ${
                   index === 0
                     ? "col-span-full md:col-span-4 row-span-2"
                     : index === 1
