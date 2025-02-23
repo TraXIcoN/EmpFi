@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Lottie from "lottie-react";
 import { ImageCarousel } from "@/components/ImageCarousel";
 import financialAnimation from "@/animations/financial.json";
@@ -12,6 +12,7 @@ import insightsAnimation from "@/animations/future.json";
 import TypewriterText from "@/components/TypewriterText";
 import { useRouter } from "next/navigation";
 import { useUser } from "@auth0/nextjs-auth0/client";
+import { Loader } from "@/components/Loader";
 
 export default function Home() {
   const router = useRouter();
@@ -47,6 +48,20 @@ export default function Home() {
       window.location.href = "/api/auth/login";
     }
   };
+
+  useEffect(() => {
+    if (inView) {
+      // Handle inView changes
+    }
+  }, [inView]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <Loader />
+      </div>
+    );
+  }
 
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">

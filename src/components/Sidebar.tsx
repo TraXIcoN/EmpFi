@@ -26,7 +26,7 @@ export default function Sidebar() {
       onMouseLeave={() => setIsHovered(false)}
       className={`
         fixed left-0 top-0 h-screen bg-gray-900 text-white
-        transition-all duration-300 ease-in-out z-[100]
+        transition-all duration-300 ease-in-out z-[100] justify-between
         ${shouldExpand ? "w-64" : "w-20"}
         ${shouldExpand ? "translate-x-0" : "-translate-x-0"}
         hover:shadow-2xl
@@ -35,9 +35,10 @@ export default function Sidebar() {
       <button
         onClick={() => setIsExpanded(!isExpanded)}
         className={`
-          absolute -right-4 top-8 bg-gray-900 rounded-full p-1.5 
-          hover:bg-gray-800 transition-colors duration-200
-          ${isHovered && !isExpanded ? "opacity-0" : "opacity-100"}
+          absolute top-8 left-1/2 transform -translate-x-1/2
+          bg-gray-900 rounded-full p-2
+          hover:bg-gray-800 transition-colors duration-200 pr-[5px]
+          ${!isHovered && isExpanded ? "opacity-0" : "opacity-100"}
           transition-opacity duration-300
         `}
       >
@@ -55,7 +56,7 @@ export default function Sidebar() {
         </h2>
       </div>
 
-      <nav className="p-4">
+      <nav className="p-4 flex-1">
         <ul className="space-y-2">
           <NavItem
             href="/dashboard"
@@ -81,45 +82,47 @@ export default function Sidebar() {
             text="Financial News"
             isExpanded={shouldExpand}
           />
-
-          <li
-            className={`mt-8 pt-4 border-t border-gray-700 
-            ${shouldExpand ? "px-0" : "px-2"}`}
-          >
-            {isLoading ? (
-              <span className="text-gray-400">
-                {shouldExpand ? "Loading..." : "..."}
-              </span>
-            ) : user ? (
-              <div className="space-y-2">
-                <div
-                  className={`transition-all duration-300 overflow-hidden
-                  ${shouldExpand ? "opacity-100 h-auto" : "opacity-0 h-0"}`}
-                >
-                  <span className="text-sm text-gray-400">
-                    Signed in as {user.email}
-                  </span>
-                </div>
-                <Link
-                  href="/api/auth/logout"
-                  className="text-red-400 hover:text-red-300 transition-colors duration-200
-                    inline-block"
-                >
-                  {shouldExpand ? "Sign Out" : "←"}
-                </Link>
-              </div>
-            ) : (
-              <Link
-                href="/api/auth/login"
-                className="text-green-400 hover:text-green-300 transition-colors duration-200
-                  inline-block"
-              >
-                {shouldExpand ? "Sign In" : "→"}
-              </Link>
-            )}
-          </li>
         </ul>
       </nav>
+
+      <div
+        className={`p-4 border-t border-gray-700 ${
+          shouldExpand ? "px-0" : "px-2"
+        }`}
+      >
+        {isLoading ? (
+          <span className="text-gray-400">
+            {shouldExpand ? "Loading..." : "..."}
+          </span>
+        ) : user ? (
+          <div className="space-y-2">
+            <div
+              className={`transition-all duration-300 overflow-hidden
+              ${shouldExpand ? "opacity-100 h-auto" : "opacity-0 h-0"}`}
+            >
+              <span className="text-sm text-gray-400">
+                Signed in as {user.email}
+              </span>
+            </div>
+            <Link
+              href="/api/auth/logout"
+              className="text-red-400 hover:text-red-300 transition-colors duration-200
+                inline-block"
+            >
+              {shouldExpand ? "Sign Out" : "←"}
+            </Link>
+          </div>
+        ) : (
+          <Link
+            href="/api/auth/login"
+            className="text-green-400 hover:text-green-300 transition-colors duration-200
+              inline-block"
+          >
+            {shouldExpand ? "Sign In" : "→"}
+          </Link>
+        )}
+      </div>
+
       {(isExpanded || isHovered) && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 transition-opacity md:hidden z-30"
