@@ -1,15 +1,12 @@
 import openai
-from typing import Dict, Any, List
+from typing import Dict, Any
 import pandas as pd
 import json
-from API_scripts.Prediction.vector_store import VectorStore, OptimizedVectorStore
-from API_scripts.Prediction.mongo_setup import MongoDBManager
+from .vector_store import VectorStore, OptimizedVectorStore
 from datetime import datetime
+from .mongo_setup import MongoDBManager
 import os
 import logging
-from bson import json_util
-import spacy
-import numpy as np
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -19,14 +16,6 @@ logger = logging.getLogger(__name__)
 openai.api_key = os.getenv('OPENAI_API_KEY')
 if not openai.api_key:
     raise ValueError("OpenAI API key not found in environment variables")
-
-# Load spaCy model for NLP processing
-try:
-    nlp = spacy.load("en_core_web_sm")
-except:
-    import subprocess
-    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
-    nlp = spacy.load("en_core_web_sm")
 
 class SmartPredictor:
     def __init__(self):
@@ -127,167 +116,6 @@ Format your response in JSON structure with the following keys:
             
         except Exception as e:
             return {"error": str(e)}
-
-    async def get_similar_historical_scenarios(self, query: str) -> list:
-        """Find similar market scenarios based on query parameters"""
-        try:
-            # Process the query with spaCy
-            doc = nlp(query.lower())
-            
-            # Extract key terms and entities
-            query_terms = {
-                "companies": set(),
-                "metrics": set(),
-                "market_conditions": set(),
-                "timeframe": set()
-            }
-            
-            # Define category keywords
-            categories = {
-                "metrics": {"volatility", "beta", "price", "value", "market cap", "volume", "growth", "interest", "rates"},
-                "market_conditions": {"bull", "bear", "trend", "correction", "crash", "rally", "recession", "fed", "federal reserve"},
-                "timeframe": {"day", "week", "month", "year", "quarter", "short term", "long term"}
-            }
-            
-            # Categorize query terms
-            for token in doc:
-                term = token.text.lower()
-                # Check for company names (entities)
-                if token.ent_type_ in ["ORG"]:
-                    query_terms["companies"].add(term)
-                # Check for metrics
-                elif term in categories["metrics"]:
-                    query_terms["metrics"].add(term)
-                # Check for market conditions
-                elif term in categories["market_conditions"]:
-                    query_terms["market_conditions"].add(term)
-                # Check for timeframe
-                elif term in categories["timeframe"]:
-                    query_terms["timeframe"].add(term)
-            
-            # Build MongoDB query
-            query_conditions = []
-            
-            # Company filter
-            if query_terms["companies"]:
-                query_conditions.append({
-                    "company": {"$regex": f".*{'|'.join(query_terms['companies'])}.*", "$options": "i"}
-                })
-            
-            # Market conditions filter
-            if query_terms["market_conditions"]:
-                query_conditions.append({
-                    "key_factors": {"$regex": f".*{'|'.join(query_terms['market_conditions'])}.*", "$options": "i"}
-                })
-            
-            # Metrics filter
-            if query_terms["metrics"]:
-                for metric in query_terms["metrics"]:
-                    if metric == "volatility":
-                        query_conditions.append({"volatility": {"$exists": True}})
-                    elif metric == "beta":
-                        query_conditions.append({"beta": {"$exists": True}})
-                    elif metric == "market cap":
-                        query_conditions.append({"market_cap": {"$exists": True}})
-            
-            # Construct final query
-            mongo_query = {"$or": query_conditions} if query_conditions else {}
-            
-            # Define sort criteria
-            sort_criteria = [("timestamp", -1)]  # Most recent first
-            
-            # Project only needed fields
-            projection = {
-                "company": 1,
-                "portfolio_value": 1,
-                "volatility": 1,
-                "beta": 1,
-                "market_cap": 1,
-                "key_factors": 1,
-                "timestamp": 1,
-                "future_value": 1,
-                "prediction": 1
-            }
-            
-            # Execute query
-            cursor = self.db_manager.market_data.find(
-                mongo_query,
-                projection
-            ).sort(sort_criteria).limit(10)
-            
-            # Process results
-            results = []
-            for doc in cursor:
-                relevance_score = self._calculate_market_relevance(doc, query_terms)
-                formatted_doc = {
-                    "company": doc.get("company", "Unknown"),
-                    "metrics": {
-                        "portfolio_value": doc.get("portfolio_value"),
-                        "volatility": doc.get("volatility"),
-                        "beta": doc.get("beta"),
-                        "market_cap": doc.get("market_cap")
-                    },
-                    "key_factors": doc.get("key_factors", []),
-                    "timestamp": doc.get("timestamp", "").strftime("%Y-%m-%d") if doc.get("timestamp") else "",
-                    "future_value": doc.get("future_value"),
-                    "prediction": doc.get("prediction", {}),
-                    "relevance_score": relevance_score
-                }
-                results.append(formatted_doc)
-            
-            # Sort by relevance score
-            results.sort(key=lambda x: x["relevance_score"], reverse=True)
-            
-            return json_util.loads(json_util.dumps(results))
-        
-        except Exception as e:
-            logger.error(f"Error finding similar market scenarios: {e}")
-            return []
-
-    def _calculate_market_relevance(self, document: Dict, query_terms: Dict) -> float:
-        """Calculate market scenario relevance score"""
-        try:
-            score = 0.0
-            
-            # Company name match
-            if query_terms["companies"]:
-                company_name = document.get("company", "").lower()
-                for company in query_terms["companies"]:
-                    if company in company_name:
-                        score += 2.0
-            
-            # Market conditions match
-            if query_terms["market_conditions"] and document.get("key_factors"):
-                factors = " ".join(document["key_factors"]).lower()
-                for condition in query_terms["market_conditions"]:
-                    if condition in factors:
-                        score += 1.5
-            
-            # Metrics match
-            if query_terms["metrics"]:
-                for metric in query_terms["metrics"]:
-                    if metric in document and document[metric] is not None:
-                        score += 1.0
-            
-            # Recency bonus
-            if document.get("timestamp"):
-                days_old = (datetime.now() - document["timestamp"]).days
-                recency_score = max(0, 1 - (days_old / 365))  # Bonus decreases with age
-                score += recency_score
-            
-            # Normalize score
-            max_possible_score = (
-                2.0 * len(query_terms["companies"]) +  # Company matches
-                1.5 * len(query_terms["market_conditions"]) +  # Market condition matches
-                1.0 * len(query_terms["metrics"]) +  # Metrics matches
-                1.0  # Recency bonus
-            )
-            
-            return score / max_possible_score if max_possible_score > 0 else 0.0
-        
-        except Exception as e:
-            logger.error(f"Error calculating market relevance score: {e}")
-            return 0.0
 
 class MarketAnalyzer:
     def __init__(self):
@@ -418,3 +246,12 @@ class MarketAnalyzer:
                 "timestamp": datetime.now().isoformat(),
                 "query": query
             }
+
+    def get_similar_historical_scenarios(self, query: str) -> list:
+        """Find similar historical market scenarios"""
+        try:
+            similar_scenarios = self.db_manager.market_data.find({}).limit(5)
+            return list(similar_scenarios)
+        except Exception as e:
+            print(f"Error finding similar scenarios: {e}")
+            return [] 

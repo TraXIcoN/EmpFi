@@ -116,7 +116,7 @@ def generate_investment_portfolio_data():
     final_df['sharpe_ratio'] = (
         (final_df['portfolio_value'].pct_change() - 0.02) / final_df['volatility']
     ).clip(-4, 4)  # Typical Sharpe ratio range
-
+    
     # Add data quality checks
     final_df['portfolio_value'] = final_df['portfolio_value'].clip(10, 1000)  # Reasonable portfolio value range
     final_df['volatility'] = final_df['volatility'].clip(0.05, 0.5)  # Typical volatility range

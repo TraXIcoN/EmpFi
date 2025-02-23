@@ -7,7 +7,7 @@ import os
 
 # Add parent directory to path to allow importing news
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from API_scripts.Prediction.news import MarketNewsAnalyzer
+from news import MarketNewsAnalyzer
 
 # Configure logging
 import logging

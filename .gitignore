@@ -34,7 +34,6 @@ yarn-error.log*
 .env*
 .env.local
 next-env.d.ts
-traffic_data.csv
 
 # vercel
 .vercel
@@ -45,3 +44,7 @@ next-env.d.ts
 
 #datasets
 investment_portfolio_timeseries.csv
+# Ignore all CSV and GZ files
+*.csv
+*.gz
+*.tar.gz
