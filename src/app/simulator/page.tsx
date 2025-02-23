@@ -364,6 +364,179 @@ interface MarketEvent {
   }[];
 }
 
+const StockTickerBoard = () => {
+  const [stocks, setStocks] = useState([
+    { symbol: "AAPL", price: 180.25, change: 0 },
+    { symbol: "GOOGL", price: 140.5, change: 0 },
+    { symbol: "MSFT", price: 330.75, change: 0 },
+    { symbol: "NVDA", price: 450.2, change: 0 },
+    { symbol: "META", price: 290.3, change: 0 },
+  ]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStocks((prevStocks) =>
+        prevStocks.map((stock) => {
+          const change = (Math.random() - 0.5) * 5; // Random change between -2.5 and 2.5
+          return {
+            ...stock,
+            price: Number((stock.price + change).toFixed(2)),
+            change: Number(change.toFixed(2)),
+          };
+        })
+      );
+    }, 2000); // Update every 2 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="bg-black/30 p-4 rounded-xl border border-blue-500/30">
+      <h3 className="text-blue-400 mb-4 font-bold">Live Market Data</h3>
+      <div className="grid grid-cols-3 gap-4">
+        {stocks.map((stock) => (
+          <div key={stock.symbol} className="p-3 bg-black/20 rounded-lg">
+            <div className="flex justify-between items-center">
+              <span className="text-white font-bold">{stock.symbol}</span>
+              <span
+                className={`${
+                  stock.change >= 0 ? "text-green-400" : "text-red-400"
+                }`}
+              >
+                ${stock.price}
+              </span>
+            </div>
+            <div
+              className={`text-sm ${
+                stock.change >= 0 ? "text-green-400" : "text-red-400"
+              }`}
+            >
+              {stock.change >= 0 ? "+" : ""}
+              {stock.change}%
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const NewsArticle = ({ article }: { article: any }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    className="bg-black/30 p-4 rounded-xl border border-blue-500/30 mb-4"
+  >
+    <h3 className="text-xl font-bold text-blue-400 mb-2">{article.title}</h3>
+    <p className="text-blue-200/80 mb-4">{article.content}</p>
+    <div className="text-sm text-blue-300 mb-2">Impact: {article.impact}</div>
+    {article.sources && article.sources.length > 0 && (
+      <div className="text-sm text-blue-400/60">
+        Sources:
+        {article.sources.map((source: string, index: number) => (
+          <a
+            key={index}
+            href="#"
+            onClick={(e) => e.preventDefault()}
+            className="ml-2 text-blue-400 hover:text-blue-300 underline"
+          >
+            [#{index + 1}]
+          </a>
+        ))}
+      </div>
+    )}
+  </motion.div>
+);
+
+const MarketParamWithComment = ({
+  label,
+  value,
+  onChange,
+  min,
+  max,
+  step,
+  icon: Icon,
+  comment,
+}: {
+  label: string;
+  value: number;
+  onChange: (value: number) => void;
+  min: number;
+  max: number;
+  step: number;
+  icon: any;
+  comment: string;
+}) => {
+  const [showComment, setShowComment] = useState(false);
+  const controls = useAnimation();
+
+  useEffect(() => {
+    controls.start({ scale: [1, 1.05, 1] });
+  }, [value]);
+
+  return (
+    <motion.div
+      whileHover={{ scale: 1.02 }}
+      className="relative p-4 bg-black/30 rounded-xl border border-blue-500/30 mb-4"
+    >
+      <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center">
+          <Icon className="text-blue-400 mr-2" />
+          <label className="text-sm font-medium text-blue-300">{label}</label>
+        </div>
+        <button
+          onClick={() => setShowComment(!showComment)}
+          className="text-blue-400 hover:text-blue-300 text-sm"
+        >
+          {showComment ? "Hide Analysis" : "Show Analysis"}
+        </button>
+      </div>
+
+      <div className="relative">
+        <input
+          type="range"
+          min={min}
+          max={max}
+          step={step}
+          value={value}
+          onChange={(e) => onChange(parseFloat(e.target.value))}
+          className="w-full h-2 bg-blue-500/20 rounded-lg appearance-none cursor-pointer"
+        />
+        <motion.div
+          animate={controls}
+          className="absolute top-[-30px] left-[calc(var(--value-percent)*100%)] transform -translate-x-1/2"
+          style={{ "--value-percent": (value - min) / (max - min) } as any}
+        >
+          <div className="bg-blue-500 px-2 py-1 rounded text-sm">{value}</div>
+        </motion.div>
+      </div>
+
+      <AnimatePresence>
+        {showComment && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="mt-4 overflow-hidden"
+          >
+            <div className="bg-blue-500/10 p-4 rounded-lg border border-blue-500/20">
+              <div className="flex items-start">
+                <span className="text-5xl text-blue-400 leading-none mr-2">
+                  "
+                </span>
+                <p className="text-blue-200 italic text-sm pt-2">{comment}</p>
+                <span className="text-5xl text-blue-400 leading-none self-end ml-2">
+                  "
+                </span>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+};
+
 export default function Simulator() {
   const { params, scenarios, isLoading, setParams, runSimulation } =
     useSimulatorStore();
@@ -393,6 +566,15 @@ export default function Simulator() {
 
   const [gameLength] = useState(120); // 2 minutes in seconds
   const [timeRemaining, setTimeRemaining] = useState(gameLength);
+  const [newsArticles, setNewsArticles] = useState<any[]>([]);
+  const [paramComments, setParamComments] = useState({
+    inflation:
+      "AI analysis suggests current inflation trends indicate potential market volatility. Consider adjusting portfolio allocation accordingly.",
+    fedRate:
+      "Recent Fed rate changes align with historical patterns of economic cycles. Watch for impact on bond yields.",
+    gdpGrowth:
+      "GDP growth metrics show promising signs of economic recovery. Tech sector likely to benefit from increased consumer spending.",
+  });
 
   const addNotification = (
     message: string,
@@ -526,7 +708,7 @@ export default function Simulator() {
       ...prev,
       stability: Math.max(
         0,
-        Math.min(100, prev.stability + choice.effects.marketStability)
+        Math.min(100, prev.stability + (choice.effects.marketStability || 0))
       ),
     }));
 
@@ -648,16 +830,34 @@ export default function Simulator() {
             id: "invest",
             text: "Invest heavily in quantum-safe security",
             impact: "High cost, but ensures future stability",
+            effects: {
+              portfolio: 15,
+              inflation: 0.5,
+              gdpGrowth: 1,
+              marketStability: -10,
+            },
           },
           {
             id: "wait",
             text: "Wait for market standards to develop",
             impact: "Saves resources but increases vulnerability",
+            effects: {
+              portfolio: 5,
+              inflation: -0.2,
+              gdpGrowth: 0.3,
+              marketStability: 5,
+            },
           },
           {
             id: "partner",
             text: "Form strategic partnerships",
             impact: "Balanced approach with moderate costs",
+            effects: {
+              portfolio: 10,
+              inflation: 0,
+              gdpGrowth: 0.5,
+              marketStability: 0,
+            },
           },
         ],
       });
@@ -679,6 +879,78 @@ export default function Simulator() {
       setIsInSimulation(false);
     }
   }, [timeRemaining]);
+
+  // Automatically update system indicators
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setScores((prev) => ({
+        wealth: Math.max(
+          0,
+          Math.min(100, prev.wealth + (Math.random() - 0.5) * 5)
+        ),
+        stability: Math.max(
+          0,
+          Math.min(100, prev.stability + (Math.random() - 0.5) * 3)
+        ),
+        innovation: Math.max(
+          0,
+          Math.min(100, prev.innovation + (Math.random() - 0.5) * 4)
+        ),
+      }));
+    }, 3000); // Update every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Generate AI news periodically
+  useEffect(() => {
+    const generateNews = async () => {
+      try {
+        // Generate a random title from a variety of possibilities
+        const titles = [
+          "Market Alert: Bullish Trends in Tech Sector",
+          "Market Alert: Bearish Trends in Tech Sector",
+          "AI Analysis: Crypto Market Volatility Surge",
+          "Breaking: Quantum Computing Impact on Markets",
+          "Market Insight: Global Trade Shifts",
+          "Analysis: Green Energy Market Disruption",
+          "Alert: Financial Technology Revolution",
+          "Report: AI-Driven Market Movements",
+        ];
+
+        const randomTitle = titles[Math.floor(Math.random() * titles.length)];
+
+        // Check if article with same title already exists
+        if (!newsArticles.some((article) => article.title === randomTitle)) {
+          const newArticle = {
+            title: randomTitle,
+            content: `AI analysis indicates significant movement in the technology sector, 
+                     with major implications for market leaders. Trading algorithms suggest 
+                     a ${
+                       Math.random() > 0.5 ? "positive" : "negative"
+                     } outlook.`,
+            impact: `Market volatility expected to ${
+              Math.random() > 0.5 ? "increase" : "decrease"
+            } in the next 24 hours.`,
+            sources: [
+              "ai-market-report-2024.pdf",
+              "tech-sector-analysis.html",
+              "quantum-trading-insights.pdf",
+            ],
+            timestamp: new Date().toISOString(),
+          };
+
+          setNewsArticles((prev) => [newArticle, ...prev].slice(0, 5));
+        }
+      } catch (error) {
+        console.error("Failed to generate news:", error);
+      }
+    };
+
+    const interval = setInterval(generateNews, 15000);
+    generateNews();
+    return () => clearInterval(interval);
+  }, [newsArticles]);
 
   if (!showSimulator) {
     return (
@@ -809,85 +1081,7 @@ export default function Simulator() {
             </div>
           </>
         ) : (
-          <div className="grid gap-6">
-            <MarketTicker updates={marketUpdates} />
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <ScoreIndicator
-                label="Economic Health"
-                value={scores.wealth}
-                color="bg-green-500"
-              />
-              <ScoreIndicator
-                label="Market Stability"
-                value={scores.stability}
-                color="bg-blue-500"
-              />
-              <ScoreIndicator
-                label="Innovation Index"
-                value={scores.innovation}
-                color="bg-purple-500"
-              />
-            </div>
-
-            <div className="bg-black/50 backdrop-blur-md rounded-2xl border border-blue-500/20 shadow-[0_0_30px_rgba(59,130,246,0.2)] p-6">
-              <h2 className="text-xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-                Market Parameters
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <ParamSlider
-                  label="Inflation Rate (%)"
-                  value={params.inflation}
-                  onChange={(value) => {
-                    setParams({ inflation: value });
-                    setScores((prev) => ({
-                      ...prev,
-                      stability: Math.max(
-                        0,
-                        prev.stability + (value < 5 ? 2 : -2)
-                      ),
-                    }));
-                  }}
-                  min={0}
-                  max={10}
-                  step={0.1}
-                  icon={MdTrendingUp}
-                />
-                <ParamSlider
-                  label="Fed Rate (%)"
-                  value={params.fedRate}
-                  onChange={(value) => setParams({ fedRate: value })}
-                  min={0}
-                  max={10}
-                  step={0.25}
-                  icon={MdTimeline}
-                />
-                <ParamSlider
-                  label="GDP Growth (%)"
-                  value={params.gdpGrowth}
-                  onChange={(value) => setParams({ gdpGrowth: value })}
-                  min={0}
-                  max={10}
-                  step={0.1}
-                  icon={MdSpeed}
-                />
-              </div>
-            </div>
-
-            <TimelineControl
-              isPlaying={isPlaying}
-              onPlayPause={() => setIsPlaying(!isPlaying)}
-              onStepForward={() => {
-                setCurrentTime((prev) => Math.min(prev + 1, 12));
-                if (Math.random() > 0.7) {
-                  // Add new random event
-                }
-              }}
-              onStepBack={() => setCurrentTime((prev) => Math.max(prev - 1, 0))}
-              currentTime={currentTime}
-              totalTime={12}
-            />
-
+          <div>
             <AnimatePresence>
               {currentEvent && (
                 <EventCard
@@ -924,6 +1118,90 @@ export default function Simulator() {
             {portfolio.currentValue.toLocaleString(undefined, {
               maximumFractionDigits: 0,
             })}
+          </div>
+        </div>
+      )}
+
+      {isInSimulation && (
+        <div className="grid grid-cols-2 gap-6 p-6">
+          {/* Left Column: User-Controlled Market Parameters */}
+          <div className="bg-black/50 backdrop-blur-md rounded-2xl border border-blue-500/20 shadow-[0_0_30px_rgba(59,130,246,0.2)] p-6">
+            <h2 className="text-xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+              Market Parameters
+            </h2>
+            <MarketParamWithComment
+              label="Inflation Rate (%)"
+              value={params.inflation}
+              onChange={(value) => setParams({ ...params, inflation: value })}
+              min={0}
+              max={10}
+              step={0.1}
+              icon={MdTrendingUp}
+              comment={paramComments.inflation}
+            />
+            <MarketParamWithComment
+              label="Fed Rate (%)"
+              value={params.fedRate}
+              onChange={(value) => setParams({ ...params, fedRate: value })}
+              min={0}
+              max={10}
+              step={0.25}
+              icon={MdTimeline}
+              comment={paramComments.fedRate}
+            />
+            <MarketParamWithComment
+              label="GDP Growth (%)"
+              value={params.gdpGrowth}
+              onChange={(value) => setParams({ ...params, gdpGrowth: value })}
+              min={0}
+              max={10}
+              step={0.1}
+              icon={MdSpeed}
+              comment={paramComments.gdpGrowth}
+            />
+          </div>
+
+          {/* Right Column: AI-Controlled System Indicators */}
+          <div className="bg-black/50 backdrop-blur-md rounded-2xl border border-blue-500/20 p-6">
+            <h2 className="text-xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+              System Indicators
+            </h2>
+            <div className="space-y-4">
+              <ScoreIndicator
+                label="Economic Health"
+                value={scores.wealth}
+                color="bg-green-500"
+              />
+              <ScoreIndicator
+                label="Market Stability"
+                value={scores.stability}
+                color="bg-blue-500"
+              />
+              <ScoreIndicator
+                label="Innovation Index"
+                value={scores.innovation}
+                color="bg-purple-500"
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {isInSimulation && (
+        <div className="grid grid-cols-2 gap-6 p-6">
+          {/* Left Column: Live Market Data */}
+          <StockTickerBoard />
+
+          {/* Right Column: AI Market Analysis */}
+          <div className="bg-black/50 backdrop-blur-md rounded-2xl border border-blue-500/20 p-6">
+            <h2 className="text-xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+              AI Market Analysis
+            </h2>
+            <div className="space-y-4">
+              {newsArticles.map((article, index) => (
+                <NewsArticle key={index} article={article} />
+              ))}
+            </div>
           </div>
         </div>
       )}

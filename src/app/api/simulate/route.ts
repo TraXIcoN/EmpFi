@@ -1,7 +1,24 @@
 import { NextResponse } from "next/server";
 
+interface SimulationContext {
+  portfolioValue: number;
+  marketTrend: string;
+  riskLevel: string;
+  events: string[];
+  duration: number; // in minutes
+}
+
 export async function POST(request: Request) {
   const params = await request.json();
+
+  // Create initial simulation context
+  const simulationContext: SimulationContext = {
+    portfolioValue: params.initialInvestment || 10000,
+    marketTrend: "bullish",
+    riskLevel: params.riskLevel || "Medium",
+    events: ["Market Opening", "Tech Sector Rally"],
+    duration: params.duration || 30, // default 30 minutes
+  };
 
   // Mock scenarios - Replace with actual AI logic
   const scenarios = [
@@ -33,5 +50,12 @@ export async function POST(request: Request) {
   // Simulate API delay
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  return NextResponse.json(scenarios);
+  // Add market context to the response
+  const response = {
+    scenarios,
+    simulationContext,
+    newsUpdateInterval: 60000, // 1 minute in milliseconds
+  };
+
+  return NextResponse.json(response);
 }
