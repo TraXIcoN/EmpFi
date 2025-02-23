@@ -1,26 +1,21 @@
 "use client"; // Add this to make it a client component
 
-import Lottie from "lottie-react";
-import loadingAnimation from "@/animations/loading.json";
+import { motion } from "framer-motion";
 
-export function Loader({ className = "" }: { className?: string }) {
+export function Loader() {
   return (
-    <div className={`flex flex-col items-center justify-center ${className}`}>
-      <div className="relative w-32 h-32">
-        {/* Animated gradient background */}
-        <div className="absolute inset-0 animate-pulse">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-xl"></div>
-        </div>
-        {/* Lottie animation */}
-        <Lottie
-          animationData={loadingAnimation}
-          loop={true}
-          className="w-full h-full"
-        />
+    <motion.div
+      className="flex items-center justify-center"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
+      <div className="relative">
+        <div className="h-24 w-24 rounded-full border-t-4 border-b-4 border-blue-500 animate-spin"></div>
+        <div
+          className="absolute top-0 left-0 h-24 w-24 rounded-full border-t-4 border-b-4 border-green-500 animate-spin"
+          style={{ animationDuration: "1.5s" }}
+        ></div>
       </div>
-      <p className="mt-4 text-lg bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400 animate-pulse">
-        Loading...
-      </p>
-    </div>
+    </motion.div>
   );
 }
