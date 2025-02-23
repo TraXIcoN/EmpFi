@@ -14,6 +14,15 @@
   }
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
@@ -21,15 +30,14 @@ body {
 }
 
 main {
-  margin-left: 5rem; /* Default margin when sidebar is collapsed */
-  margin-right: 1rem; /* Add right margin for spacing */
-  margin-top: 1rem; /* Add top margin for spacing */
-  margin-bottom: 1rem; /* Add bottom margin for spacing */
-  transition: margin-left 300ms ease-in-out;
+  margin: 0 !important;
+  padding: 1rem;
 }
 
-.sidebar-expanded main {
-  margin-left: 16rem; /* Margin when sidebar is expanded */
+#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 @layer utilities {

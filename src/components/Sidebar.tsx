@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useUser } from "@auth0/nextjs-auth0/client";
+import { useState } from "react";
 import {
   MdDashboard,
   MdTimeline,
@@ -15,79 +16,85 @@ import { useSidebar } from "@/context/SidebarContext";
 export default function Sidebar() {
   const { user, isLoading } = useUser();
   const { isExpanded, setIsExpanded } = useSidebar();
+  const [isHovered, setIsHovered] = useState(false);
+
+  const shouldExpand = isExpanded || isHovered;
 
   return (
     <aside
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       className={`
         fixed left-0 top-0 h-screen bg-gray-900 text-white
-        transition-all duration-300 ease-in-out z-10000
-        ${isExpanded ? "w-64" : "w-20"}
-        ${isExpanded ? "translate-x-0" : "-translate-x-0"}
+        transition-all duration-300 ease-in-out z-[100]
+        ${shouldExpand ? "w-64" : "w-20"}
+        ${shouldExpand ? "translate-x-0" : "-translate-x-0"}
+        hover:shadow-2xl
       `}
     >
-      {/* Toggle Button */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="absolute -right-4 top-8 bg-gray-900 rounded-full p-1.5 
-          hover:bg-gray-800 transition-colors duration-200"
+        className={`
+          absolute -right-4 top-8 bg-gray-900 rounded-full p-1.5 
+          hover:bg-gray-800 transition-colors duration-200
+          ${isHovered && !isExpanded ? "opacity-0" : "opacity-100"}
+          transition-opacity duration-300
+        `}
       >
-        {isExpanded ? <MdChevronLeft size={20} /> : <MdMenu size={20} />}
+        {shouldExpand ? <MdChevronLeft size={20} /> : <MdMenu size={20} />}
       </button>
 
-      {/* Header */}
-      <div className={`p-4 ${isExpanded ? "px-4" : "px-2"}`}>
+      <div className={`p-4 ${shouldExpand ? "px-4" : "px-2"}`}>
         <h2
           className={`text-xl font-bold mb-4 overflow-hidden whitespace-nowrap
           transition-all duration-300 ${
-            isExpanded ? "opacity-100" : "opacity-0"
+            shouldExpand ? "opacity-100" : "opacity-0"
           }`}
         >
           EmpiFi
         </h2>
       </div>
 
-      {/* Navigation */}
       <nav className="p-4">
         <ul className="space-y-2">
           <NavItem
             href="/dashboard"
             icon={<MdDashboard size={24} />}
             text="Dashboard"
-            isExpanded={isExpanded}
+            isExpanded={shouldExpand}
           />
           <NavItem
             href="/simulator"
             icon={<MdTimeline size={24} />}
             text="Future Scenarios"
-            isExpanded={isExpanded}
+            isExpanded={shouldExpand}
           />
           <NavItem
             href="/investment-map"
             icon={<MdMap size={24} />}
             text="Investment Map"
-            isExpanded={isExpanded}
+            isExpanded={shouldExpand}
           />
           <NavItem
             href="/news"
             icon={<MdNewspaper size={24} />}
             text="Financial News"
-            isExpanded={isExpanded}
+            isExpanded={shouldExpand}
           />
 
-          {/* User Section */}
           <li
             className={`mt-8 pt-4 border-t border-gray-700 
-            ${isExpanded ? "px-0" : "px-2"}`}
+            ${shouldExpand ? "px-0" : "px-2"}`}
           >
             {isLoading ? (
               <span className="text-gray-400">
-                {isExpanded ? "Loading..." : "..."}
+                {shouldExpand ? "Loading..." : "..."}
               </span>
             ) : user ? (
               <div className="space-y-2">
                 <div
                   className={`transition-all duration-300 overflow-hidden
-                  ${isExpanded ? "opacity-100 h-auto" : "opacity-0 h-0"}`}
+                  ${shouldExpand ? "opacity-100 h-auto" : "opacity-0 h-0"}`}
                 >
                   <span className="text-sm text-gray-400">
                     Signed in as {user.email}
@@ -98,7 +105,7 @@ export default function Sidebar() {
                   className="text-red-400 hover:text-red-300 transition-colors duration-200
                     inline-block"
                 >
-                  {isExpanded ? "Sign Out" : "←"}
+                  {shouldExpand ? "Sign Out" : "←"}
                 </Link>
               </div>
             ) : (
@@ -107,23 +114,25 @@ export default function Sidebar() {
                 className="text-green-400 hover:text-green-300 transition-colors duration-200
                   inline-block"
               >
-                {isExpanded ? "Sign In" : "→"}
+                {shouldExpand ? "Sign In" : "→"}
               </Link>
             )}
           </li>
         </ul>
       </nav>
-      {isExpanded && (
+      {(isExpanded || isHovered) && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 transition-opacity md:hidden z-30"
-          onClick={() => setIsExpanded(false)}
+          onClick={() => {
+            setIsExpanded(false);
+            setIsHovered(false);
+          }}
         />
       )}
     </aside>
   );
 }
 
-// NavItem Component
 function NavItem({
   href,
   icon,

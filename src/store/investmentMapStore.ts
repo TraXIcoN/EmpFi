@@ -18,6 +18,11 @@ interface StateInvestmentInsight {
     unemployment: number;
     businessGrowth: number;
   };
+  sources: {
+    title: string;
+    url: string;
+    date: string;
+  }[];
 }
 
 interface InvestmentMapStore {
