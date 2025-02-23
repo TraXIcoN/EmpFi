@@ -5,6 +5,7 @@ import pandas as pd
 from typing import List, Dict
 from datetime import datetime, timedelta
 import os
+from .mongo_setup import MongoDBManager
 
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
