@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useUser } from "@auth0/nextjs-auth0/client";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {
   MdDashboard,
   MdTimeline,
@@ -14,10 +14,15 @@ import {
 } from "react-icons/md";
 import { useSidebar } from "@/context/SidebarContext";
 
-export default function Sidebar() {
+interface SidebarProps {
+  className?: string;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ className }) => {
   const { user, isLoading } = useUser();
   const { isExpanded, setIsExpanded } = useSidebar();
   const [isHovered, setIsHovered] = useState(false);
+  const timelineInterval = useRef<NodeJS.Timeout | null>(null);
 
   const shouldExpand = isExpanded || isHovered;
 
@@ -32,6 +37,7 @@ export default function Sidebar() {
         ${shouldExpand ? "w-64" : "w-20"}
         ${shouldExpand ? "translate-x-0" : "-translate-x-0"}
         hover:shadow-2xl
+        ${className}
       `}
     >
       <button
@@ -143,7 +149,9 @@ export default function Sidebar() {
       )}
     </aside>
   );
-}
+};
+
+export default Sidebar;
 
 function NavItem({
   href,

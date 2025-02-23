@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import dbConnect from "@/utils/mongodb";
 import NewsArticle from "@/models/NewsArticle";
 import { fetchNewsArticles, fetchArticleImage } from "@/utils/newsApi";
+const API_BASE_URL = process.env.API_BASE_URL;
 
 export async function GET(request: Request) {
   try {

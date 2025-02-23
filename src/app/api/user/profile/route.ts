@@ -1,6 +1,7 @@
 import { getSession } from "@auth0/nextjs-auth0";
 import { NextResponse } from "next/server";
 import clientPromise from "@/lib/mongodb";
+import { ObjectId } from "mongodb";
 
 export async function GET(request: Request) {
   const session = await getSession();
@@ -22,6 +23,7 @@ export async function GET(request: Request) {
 
     if (!userProfile) {
       userProfile = {
+        _id: new ObjectId(),
         auth0Id: session.user.sub,
         email: session.user.email,
         name: session.user.name,

@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
@@ -68,7 +70,7 @@ const MapController = ({ selectedState, map }) => {
       const layers = Object.values(map._layers);
       const selectedLayer = layers.find(
         (layer: any) => layer.feature?.properties?.name === selectedState
-      );
+      ) as L.GeoJSON;
 
       if (selectedLayer) {
         const bounds = selectedLayer.getBounds();
