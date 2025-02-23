@@ -1,110 +1,214 @@
 import requests
 from datetime import datetime
 import json
+import openai
+import time
+import os
+import logging
+from typing import Dict, List
+from serpapi import GoogleSearch
+
+# Configure logging
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 class MarketNewsAnalyzer:
-    def __init__(self, api_key):
-        self.api_key = api_key
-        self.base_url = 'https://newsapi.org/v2/everything'
-    
+    def __init__(self, serp_api_key, openai_api_key):
+        logger.info("Initializing MarketNewsAnalyzer")
+        self.serp_api_key = serp_api_key
+        openai.api_key = openai_api_key
+        self.last_update = None
+        self.cache = None
+        self.UPDATE_INTERVAL = 3600  # 1 hour in seconds
+        logger.debug(f"Update interval set to {self.UPDATE_INTERVAL} seconds")
+
+    def get_market_analysis(self) -> Dict:
+        """Get market analysis, using cache if within update interval"""
+        logger.info("Getting market analysis")
+        current_time = time.time()
+        
+        if (self.last_update is None or 
+            current_time - self.last_update > self.UPDATE_INTERVAL or
+            self.cache is None):
+            logger.debug("Cache expired or not initialized, fetching new data")
+            self.cache = self.fetch_market_news()
+            self.last_update = current_time
+        else:
+            logger.debug("Using cached data")
+            
+        return self.cache
+
     def fetch_market_news(self, keywords=['economy', 'market', 'stocks', 'federal reserve']):
-        alerts = []
-        market_trends = []
+        logger.info("Fetching market news")
+        logger.debug(f"Using keywords: {keywords}")
+        articles = []
         
         for keyword in keywords:
-            params = {
-                'q': keyword,
-                'apiKey': self.api_key,
-                'sortBy': 'publishedAt',
-                'language': 'en',
-                'pageSize': 10
+            logger.debug(f"Searching for keyword: {keyword}")
+            search_params = {
+                "engine": "google_news",
+                "q": f"{keyword} news",
+                "gl": "us",
+                "hl": "en",
+                "api_key": self.serp_api_key
             }
             
-            response = requests.get(self.base_url, params=params)
-            if response.status_code == 200:
-                news_data = response.json()
+            try:
+                logger.debug("Making SerpAPI request")
+                search = GoogleSearch(search_params)
+                results = search.get_dict()
                 
-                # Process articles for alerts and trends
-                for article in news_data['articles']:
-                    # Analyze article sentiment and importance
-                    alert_level = self._analyze_importance(article['title'], article['description'])
-                    if alert_level:
-                        alerts.append({
-                            'level': alert_level,
-                            'timestamp': article['publishedAt'],
+                if 'news_results' in results:
+                    logger.debug(f"Found {len(results['news_results'])} articles for {keyword}")
+                    for article in results['news_results'][:5]:
+                        articles.append({
                             'title': article['title'],
-                            'description': article['description'],
-                            'url': article['url']
+                            'description': article.get('snippet', ''),
+                            'source': article['source']['name'],
+                            'url': article['link'],
+                            'date': article.get('date', '')
                         })
-                    
-                    # Extract market trends
-                    trend = self._extract_market_trend(article)
-                    if trend:
-                        market_trends.append(trend)
-        
-        return self._format_market_report(alerts, market_trends)
-    
-    def _analyze_importance(self, title, description):
-        # Simple keyword-based importance analysis
-        high_priority = ['crash', 'surge', 'crisis', 'emergency', 'volatile']
-        medium_priority = ['increase', 'decrease', 'change', 'federal reserve']
-        
-        text = (title + ' ' + description).lower()
-        
-        if any(word in text for word in high_priority):
-            return 'HIGH'
-        elif any(word in text for word in medium_priority):
-            return 'MEDIUM'
-        return 'LOW'
-    
-    def _extract_market_trend(self, article):
-        # Extract relevant market trends from article
-        if any(keyword in article['title'].lower() for keyword in ['trend', 'market', 'economy']):
-            return {
-                'title': article['title'],
-                'timestamp': article['publishedAt'],
-                'analysis': article['description']
-            }
-        return None
-    
-    def _format_market_report(self, alerts, trends):
-        report = {
-            'timestamp': datetime.now().isoformat(),
-            'active_alerts': alerts[:5],  # Top 5 alerts
-            'market_trends': trends[:3],  # Top 3 trends
-            'risk_analysis': {
-                'updated': datetime.now().isoformat(),
-                'risk_level': self._calculate_risk_level(alerts),
-                'recommendations': self._generate_recommendations(alerts, trends)
-            }
-        }
-        return report
+                else:
+                    logger.warning(f"No news results found for keyword: {keyword}")
+            except Exception as e:
+                logger.error(f"Error fetching news for keyword {keyword}: {str(e)}")
 
-    def _calculate_risk_level(self, alerts):
-        high_alerts = sum(1 for alert in alerts if alert['level'] == 'HIGH')
-        medium_alerts = sum(1 for alert in alerts if alert['level'] == 'MEDIUM')
+        logger.info(f"Total articles collected: {len(articles)}")
         
-        if high_alerts >= 2:
-            return 'High'
-        elif high_alerts == 1 or medium_alerts >= 2:
-            return 'Moderate-High'
-        elif medium_alerts == 1:
-            return 'Moderate'
-        return 'Low'
-    
-    def _generate_recommendations(self, alerts, trends):
-        # Simple recommendation generation based on alerts and trends
-        recommendations = []
-        if any(alert['level'] == 'HIGH' for alert in alerts):
-            recommendations.append('Consider increasing cash reserves')
-            recommendations.append('Review hedge positions')
-        if len(alerts) >= 3:
-            recommendations.append('Monitor market volatility closely')
-        return recommendations
+        # Get AI analysis of the articles
+        try:
+            logger.debug("Getting AI analysis")
+            ai_analysis = self._get_ai_analysis(articles)
+            
+            # Combine with timestamp and raw articles
+            report = {
+                'timestamp': datetime.now().isoformat(),
+                'raw_articles': articles[:5],  # Keep top 5 raw articles
+                **ai_analysis  # Include all AI analysis
+            }
+            
+            logger.debug("Market news report generated successfully")
+            return report
+            
+        except Exception as e:
+            logger.error(f"Error in AI analysis: {str(e)}")
+            return self._generate_fallback_analysis()
+
+    def _get_ai_analysis(self, articles: List[Dict]) -> Dict:
+        """Get AI analysis of market news using OpenAI"""
+        logger.info("Starting AI analysis")
+        
+        # Prepare context for OpenAI
+        article_summaries = "\n".join([
+            f"Title: {article['title']}\nDescription: {article['description']}\nSource: {article['source']}\nDate: {article['date']}\n"
+            for article in articles[:5]
+        ])
+        logger.debug(f"Prepared summaries for {len(articles[:5])} articles")
+
+        prompt = f"""
+        Based on these recent market news articles:
+        {article_summaries}
+
+        Provide a detailed market analysis in the following JSON format:
+        {{
+            "active_alerts": [
+                {{
+                    "level": "HIGH/MEDIUM/LOW",
+                    "title": "brief alert title",
+                    "description": "detailed description",
+                    "sector": "affected sector"
+                }}
+            ],
+            "portfolio_analysis": {{
+                "recommended_allocations": [
+                    {{
+                        "asset_name": "asset category",
+                        "allocation_percentage": number,
+                        "reasoning": "brief explanation"
+                    }}
+                ]
+            }},
+            "risk_analysis": {{
+                "risk_level": "High/Moderate-High/Moderate/Low",
+                "market_conditions": "detailed analysis",
+                "key_factors": ["factor1", "factor2"]
+            }},
+            "market_trends": [
+                {{
+                    "trend_name": "name of trend",
+                    "description": "detailed description",
+                    "impact": "potential market impact"
+                }}
+            ],
+            "historical_comparison": {{
+                "similar_period": "historical period",
+                "similarities": ["similarity1", "similarity2"],
+                "differences": ["difference1", "difference2"],
+                "key_lessons": ["lesson1", "lesson2"]
+            }},
+            "recommended_actions": ["action1", "action2", "action3"]
+        }}
+        """
+
+        try:
+            logger.debug("Making OpenAI API request")
+            response = openai.chat.completions.create(
+                model="gpt-4",
+                messages=[
+                    {"role": "system", "content": "You are a financial analyst expert providing detailed market analysis."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.7
+            )
+            
+            logger.debug("Successfully received OpenAI response")
+            return json.loads(response.choices[0].message.content)
+            
+        except json.JSONDecodeError as e:
+            logger.error(f"Failed to parse OpenAI response: {str(e)}")
+            return self._generate_fallback_analysis()
+        except Exception as e:
+            logger.error(f"Error in OpenAI request: {str(e)}")
+            return self._generate_fallback_analysis()
+
+    def _generate_fallback_analysis(self):
+        """Generate fallback analysis in case of API failure"""
+        logger.warning("Generating fallback analysis due to error")
+        return {
+            'active_alerts': [],
+            'portfolio_analysis': {
+                'recommended_allocations': []
+            },
+            'risk_analysis': {
+                'risk_level': 'Moderate',
+                'market_conditions': 'Analysis temporarily unavailable',
+                'key_factors': []
+            },
+            'market_trends': [],
+            'historical_comparison': {
+                'similarities': [],
+                'differences': [],
+                'key_lessons': []
+            },
+            'recommended_actions': ['Monitor market conditions', 'Maintain current positions']
+        }
 
 # Usage
 if __name__ == "__main__":
-    API_KEY = '1bd32a071e4b1917199118bbe0b40830885f299e6a50d12a1a7f67583845eed2'
-    analyzer = MarketNewsAnalyzer(API_KEY)
-    market_report = analyzer.fetch_market_news()
-    print(json.dumps(market_report, indent=2))
+    logger.info("Starting MarketNewsAnalyzer script")
+    try:
+        # Using API keys directly for testing
+        SERP_API_KEY = '1bd32a071e4b1917199118bbe0b40830885f299e6a50d12a1a7f67583845eed2'
+        OPENAI_API_KEY = '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'
+        
+        analyzer = MarketNewsAnalyzer(SERP_API_KEY, OPENAI_API_KEY)
+        logger.info("Fetching market analysis")
+        market_report = analyzer.get_market_analysis()
+        print(json.dumps(market_report, indent=2))
+        logger.info("Script completed successfully")
+        
+    except Exception as e:
+        logger.error(f"Script failed with error: {str(e)}")
