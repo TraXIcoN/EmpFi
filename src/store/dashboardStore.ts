@@ -21,26 +21,32 @@ interface HistoricalComparison {
   lessons: string[];
 }
 
-interface DashboardStore {
-  alerts: Alert[];
-  riskAnalysis: RiskAnalysis | null;
-  historicalComparison: HistoricalComparison | null;
+interface DashboardState {
+  alerts: any[];
+  riskAnalysis: any;
+  portfolioAnalysis: any;
+  historicalComparison: any;
   isLoading: boolean;
-  setAlerts: (alerts: Alert[]) => void;
-  setRiskAnalysis: (analysis: RiskAnalysis) => void;
-  setHistoricalComparison: (comparison: HistoricalComparison) => void;
+  setAlerts: (alerts: any[]) => void;
+  setRiskAnalysis: (analysis: any) => void;
+  setPortfolioAnalysis: (analysis: any) => void;
+  setHistoricalComparison: (comparison: any) => void;
+  setIsLoading: (loading: boolean) => void;
   fetchInitialData: () => Promise<void>;
 }
 
-export const useDashboardStore = create<DashboardStore>((set) => ({
+export const useDashboardStore = create<DashboardState>((set) => ({
   alerts: [],
   riskAnalysis: null,
+  portfolioAnalysis: null,
   historicalComparison: null,
-  isLoading: false,
+  isLoading: true,
   setAlerts: (alerts) => set({ alerts }),
   setRiskAnalysis: (analysis) => set({ riskAnalysis: analysis }),
+  setPortfolioAnalysis: (analysis) => set({ portfolioAnalysis: analysis }),
   setHistoricalComparison: (comparison) =>
     set({ historicalComparison: comparison }),
+  setIsLoading: (loading) => set({ isLoading: loading }),
   fetchInitialData: async () => {
     set({ isLoading: true });
     try {

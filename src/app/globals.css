@@ -76,3 +76,39 @@ main {
     }
   }
 }
+
+.recharts-text {
+  fill: white !important;
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: rgba(255, 255, 255, 0.1) !important;
+}
+
+.recharts-tooltip-wrapper {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+}
+
+/* Add these to your existing styles */
+.recharts-text {
+  fill: rgb(216, 180, 254) !important; /* Purple-200 equivalent */
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: rgba(168, 85, 247, 0.2) !important; /* Purple-500 with low opacity */
+}
+
+.recharts-tooltip-wrapper {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  border: 1px solid rgba(168, 85, 247, 0.2) !important;
+  color: rgb(216, 180, 254) !important;
+}
+
+/* Add gradient effect to pie chart segments */
+.recharts-pie-sector path {
+  stroke: rgba(168, 85, 247, 0.2);
+}

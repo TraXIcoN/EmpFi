@@ -49,7 +49,7 @@ export default function RootLayout({
           ) : (
             <SidebarProvider>
               <div className="flex min-h-screen">
-                <Sidebar />
+                <Sidebar className="fixed left-0 top-0 h-screen bg-black/80 backdrop-blur-md text-white z-[9999] shadow-xl" />
                 <main className="flex-1 transition-all duration-300 ease-in-out">
                   {children}
                 </main>
