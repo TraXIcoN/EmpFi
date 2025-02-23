@@ -5,10 +5,42 @@ const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
 const SEARCH_ENGINE_ID = process.env.SEARCH_ENGINE_ID;
 
 async function fetchGoogleNews(query: string) {
-  const response = await fetch(
-    `https://www.googleapis.com/customsearch/v1?key=${GOOGLE_API_KEY}&cx=${SEARCH_ENGINE_ID}&q=${query}&num=5&sort=date`
-  );
-  return await response.json();
+  try {
+    const response = await fetch(
+      `https://www.googleapis.com/customsearch/v1?key=${GOOGLE_API_KEY}&cx=${SEARCH_ENGINE_ID}&q=${query}&num=5&sort=date`
+    );
+
+    if (!response.ok) {
+      throw new Error(`Google API responded with status: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    return (
+      data.items?.map((item: any) => ({
+        title: item.title,
+        snippet: item.snippet,
+        link: item.link,
+        source: item.displayLink || new URL(item.link).hostname,
+        publishedTime:
+          item.pagemap?.metatags?.[0]?.["article:published_time"] || null,
+        sentiment: analyzeSentiment(item.title + " " + item.snippet),
+      })) || []
+    );
+  } catch (error) {
+    console.error(`Error fetching news for query "${query}":`, error);
+    // Return placeholder data with real news sources
+    return [
+      {
+        title: `Latest ${query} Updates`,
+        snippet: "Unable to fetch latest news. Please try again later.",
+        link: "https://www.reuters.com/markets/",
+        source: "Reuters",
+        publishedTime: new Date().toISOString(),
+        sentiment: "neutral",
+      },
+    ];
+  }
 }
 
 export async function GET() {
@@ -74,11 +106,13 @@ export async function GET() {
 
 function formatNewsResults(data: any, category: string) {
   return (
-    data.items?.map((item: any) => ({
+    data.map((item: any) => ({
       title: item.title,
       snippet: item.snippet,
       link: item.link,
-      sentiment: analyzeSentiment(item.title + " " + item.snippet),
+      source: item.source,
+      publishedTime: item.publishedTime,
+      sentiment: item.sentiment,
       category,
     })) || []
   );

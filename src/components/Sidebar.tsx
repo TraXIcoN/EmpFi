@@ -26,7 +26,8 @@ export default function Sidebar() {
       onMouseLeave={() => setIsHovered(false)}
       className={`
         fixed left-0 top-0 h-screen bg-gray-900 text-white
-        transition-all duration-300 ease-in-out z-[100] justify-between
+        transition-all duration-300 ease-in-out z-[100]
+        flex flex-col
         ${shouldExpand ? "w-64" : "w-20"}
         ${shouldExpand ? "translate-x-0" : "-translate-x-0"}
         hover:shadow-2xl
@@ -35,7 +36,7 @@ export default function Sidebar() {
       <button
         onClick={() => setIsExpanded(!isExpanded)}
         className={`
-          absolute top-8 left-1/2 transform -translate-x-1/2
+          absolute top-11 -ml-2 left-1/2 transform -translate-x-1/2
           bg-gray-900 rounded-full p-2
           hover:bg-gray-800 transition-colors duration-200 pr-[5px]
           ${!isHovered && isExpanded ? "opacity-0" : "opacity-100"}
@@ -52,11 +53,11 @@ export default function Sidebar() {
             shouldExpand ? "opacity-100" : "opacity-0"
           }`}
         >
-          EmpiFi
+          thefomofund.tech
         </h2>
       </div>
 
-      <nav className="p-4 flex-1">
+      <nav className="flex-1 p-4">
         <ul className="space-y-2">
           <NavItem
             href="/dashboard"
@@ -85,41 +86,48 @@ export default function Sidebar() {
         </ul>
       </nav>
 
-      <div
-        className={`p-4 border-t border-gray-700 ${
-          shouldExpand ? "px-0" : "px-2"
-        }`}
-      >
+      {/* User section at the bottom */}
+      <div className="mt-auto border-t border-gray-700">
         {isLoading ? (
-          <span className="text-gray-400">
-            {shouldExpand ? "Loading..." : "..."}
-          </span>
+          <div className={`p-4 ${shouldExpand ? "px-4" : "px-2"}`}>
+            <span className="text-gray-400">
+              {shouldExpand ? "Loading..." : "..."}
+            </span>
+          </div>
         ) : user ? (
-          <div className="space-y-2">
+          <div className={`p-4 ${shouldExpand ? "px-4" : "px-2"}`}>
             <div
               className={`transition-all duration-300 overflow-hidden
-              ${shouldExpand ? "opacity-100 h-auto" : "opacity-0 h-0"}`}
+              ${shouldExpand ? "opacity-100 h-auto mb-2" : "opacity-0 h-0"}`}
             >
-              <span className="text-sm text-gray-400">
-                Signed in as {user.email}
+              <span className="text-sm text-gray-400 break-all">
+                {user.email}
               </span>
             </div>
             <Link
               href="/api/auth/logout"
               className="text-red-400 hover:text-red-300 transition-colors duration-200
-                inline-block"
+                inline-flex items-center space-x-2"
             >
-              {shouldExpand ? "Sign Out" : "←"}
+              <span className="text-xl">←</span>
+              <span className={`${shouldExpand ? "block" : "hidden"}`}>
+                Sign Out
+              </span>
             </Link>
           </div>
         ) : (
-          <Link
-            href="/api/auth/login"
-            className="text-green-400 hover:text-green-300 transition-colors duration-200
-              inline-block"
-          >
-            {shouldExpand ? "Sign In" : "→"}
-          </Link>
+          <div className={`p-4 ${shouldExpand ? "px-4" : "px-2"}`}>
+            <Link
+              href="/api/auth/login"
+              className="text-green-400 hover:text-green-300 transition-colors duration-200
+                inline-flex items-center space-x-2"
+            >
+              <span className="text-xl">→</span>
+              <span className={`${shouldExpand ? "block" : "hidden"}`}>
+                Sign In
+              </span>
+            </Link>
+          </div>
         )}
       </div>
 

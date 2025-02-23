@@ -7,6 +7,8 @@ interface NewsItem {
   title: string;
   snippet: string;
   link: string;
+  source: string;
+  publishedTime?: string | null;
   sentiment: string;
   category: string;
 }
@@ -19,21 +21,16 @@ export function MarketOverview({ news }: MarketOverviewProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [displayedNews, setDisplayedNews] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
-  const [debugInfo, setDebugInfo] = useState({
-    newsLength: 0,
-    newsContent: null,
-    loadingState: true,
-    lastUpdate: "",
-    error: null as string | null,
-  });
 
-  // Add placeholder news data
+  // Updated placeholder news with real sources
   const placeholderNews = [
     {
       title: "Market Rally Continues as Tech Stocks Lead Gains",
       snippet:
         "Major indices show strong performance with technology sector leading the way. AI-related stocks continue to attract investor attention.",
-      link: "#",
+      link: "https://www.bloomberg.com/markets",
+      source: "Bloomberg",
+      publishedTime: new Date().toISOString(),
       sentiment: "positive",
       category: "market",
     },
@@ -41,31 +38,19 @@ export function MarketOverview({ news }: MarketOverviewProps) {
       title: "Federal Reserve Signals Rate Decision Impact",
       snippet:
         "Central bank's latest policy meeting suggests a cautious approach to future rate adjustments as inflation data remains key focus.",
-      link: "#",
+      link: "https://www.wsj.com/news/markets",
+      source: "Wall Street Journal",
+      publishedTime: new Date().toISOString(),
       sentiment: "neutral",
       category: "economic",
-    },
-    {
-      title: "AI Integration Drives Tech Sector Growth",
-      snippet:
-        "Companies reporting increased efficiency and revenue growth through artificial intelligence implementation across various industries.",
-      link: "#",
-      sentiment: "positive",
-      category: "tech",
-    },
-    {
-      title: "Global Markets React to Economic Data",
-      snippet:
-        "International markets show mixed reactions to latest economic indicators and trade developments.",
-      link: "#",
-      sentiment: "neutral",
-      category: "market",
     },
     {
       title: "Tech Innovation Drives Market Momentum",
       snippet:
         "Breakthrough developments in quantum computing and AI applications continue to shape market trends.",
       link: "#",
+      source: "TechCrunch",
+      publishedTime: new Date().toISOString(),
       sentiment: "positive",
       category: "tech",
     },
@@ -88,11 +73,6 @@ export function MarketOverview({ news }: MarketOverviewProps) {
       setLoading(false);
     } catch (error) {
       console.error("Error in MarketOverview effect:", error);
-      setDebugInfo((prev) => ({
-        ...prev,
-        error: error instanceof Error ? error.message : "Unknown error",
-        lastUpdate: new Date().toISOString(),
-      }));
     }
   }, [selectedCategory, news]);
 
@@ -110,30 +90,6 @@ export function MarketOverview({ news }: MarketOverviewProps) {
       <h3 className="text-xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
         Market Overview
       </h3>
-
-      {/* Debug Information */}
-      {showDebugInfo && (
-        <div className="mb-4 p-4 bg-red-500/20 rounded-md">
-          <h4 className="font-semibold text-red-300 mb-2">
-            Debug Information:
-          </h4>
-          <pre className="text-xs text-red-300 overflow-auto">
-            {JSON.stringify(
-              {
-                newsLength: debugInfo.newsLength,
-                loadingState: debugInfo.loadingState,
-                selectedCategory,
-                displayedNewsLength: displayedNews.length,
-                lastUpdate: debugInfo.lastUpdate,
-                error: debugInfo.error,
-                usingPlaceholder: news?.length === 0,
-              },
-              null,
-              2
-            )}
-          </pre>
-        </div>
-      )}
 
       <div className="flex space-x-2 mb-6 overflow-x-auto pb-2">
         {categories.map((category) => (
@@ -204,24 +160,45 @@ export function MarketOverview({ news }: MarketOverviewProps) {
                 </div>
                 <p className="text-gray-400 text-sm mb-2">{item.snippet}</p>
                 <div className="flex justify-between items-center">
-                  <span
-                    className={`text-sm ${
-                      item.sentiment === "positive"
-                        ? "text-green-400"
-                        : item.sentiment === "negative"
-                        ? "text-red-400"
-                        : "text-yellow-400"
-                    }`}
-                  >
-                    {item.sentiment}
-                  </span>
+                  <div className="flex items-center space-x-4">
+                    <span
+                      className={`text-sm ${
+                        item.sentiment === "positive"
+                          ? "text-green-400"
+                          : item.sentiment === "negative"
+                          ? "text-red-400"
+                          : "text-yellow-400"
+                      }`}
+                    >
+                      {item.sentiment}
+                    </span>
+                    <span className="text-sm text-gray-500">{item.source}</span>
+                    {item.publishedTime && (
+                      <span className="text-sm text-gray-500">
+                        {new Date(item.publishedTime).toLocaleDateString()}
+                      </span>
+                    )}
+                  </div>
                   <a
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-blue-400 hover:text-blue-300"
+                    className="text-sm text-blue-400 hover:text-blue-300 flex items-center space-x-1"
                   >
-                    Read more →
+                    <span>Read more</span>
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
                   </a>
                 </div>
               </motion.div>
