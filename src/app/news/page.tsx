@@ -3,11 +3,14 @@
 import { useState, useEffect } from "react";
 import { MdShare, MdBookmark, MdBookmarkBorder } from "react-icons/md";
 import AnimatedText from "@/components/AnimatedText";
+import { fetchNewsArticles, fetchArticleImage } from "@/utils/newsApi";
+import Image from "next/image";
 
 interface NewsArticle {
   id: string;
   title: string;
   summary: string;
+  image?: string;
   impact: {
     tech: string;
     finance: string;
@@ -24,80 +27,24 @@ export default function NewsPage() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const mockArticles: NewsArticle[] = [
-      {
-        id: "1",
-        title: "Early Signs of Stagflation Emerge in US Economy",
-        summary:
-          "Recent economic indicators suggest the US economy might be heading towards stagflation, a period characterized by high inflation and stagnant growth.",
-        impact: {
-          tech: "Tech companies might face reduced consumer spending and higher operational costs.",
-          finance:
-            "Financial institutions should prepare for potential interest rate volatility.",
-          retail:
-            "Retail sector may experience decreased consumer confidence and spending.",
-        },
-        sentiment: "negative",
-        timestamp: new Date().toISOString(),
-      },
-      {
-        id: "2",
-        title: "AI Startup Funding Reaches Record Heights",
-        summary:
-          "Venture capital investments in AI startups have hit an all-time high this quarter, with particular focus on generative AI applications.",
-        impact: {
-          tech: "Increased competition and innovation in the AI sector expected.",
-          finance: "VCs shifting portfolios towards AI-focused investments.",
-          retail:
-            "More AI-powered customer service solutions becoming available.",
-        },
-        sentiment: "positive",
-        timestamp: new Date().toISOString(),
-      },
-      {
-        id: "3",
-        title: "Global Supply Chain Shows Signs of Recovery",
-        summary:
-          "Major shipping routes report decreased delays and normalized container prices, indicating potential improvements in global trade efficiency.",
-        impact: {
-          tech: "Hardware manufacturers can expect more predictable delivery times.",
-          finance: "Reduced logistics costs may improve corporate profits.",
-          retail: "Better inventory management and reduced stockout risks.",
-        },
-        sentiment: "positive",
-        timestamp: new Date().toISOString(),
-      },
-      {
-        id: "4",
-        title: "Central Banks Signal Shift in Monetary Policy",
-        summary:
-          "Multiple central banks hint at potential policy changes in response to evolving economic conditions and inflation metrics.",
-        impact: {
-          tech: "Startup funding environment may become more challenging.",
-          finance: "Bond markets likely to see increased volatility.",
-          retail: "Consumer lending rates may be affected.",
-        },
-        sentiment: "neutral",
-        timestamp: new Date().toISOString(),
-      },
-      {
-        id: "5",
-        title: "E-commerce Giants Face New Regulatory Challenges",
-        summary:
-          "Lawmakers propose stricter oversight of online marketplaces, focusing on consumer protection and fair competition.",
-        impact: {
-          tech: "Platform companies may need to modify their business models.",
-          finance: "Investment strategies in tech sector require reassessment.",
-          retail: "Smaller retailers might gain competitive advantages.",
-        },
-        sentiment: "negative",
-        timestamp: new Date().toISOString(),
-      },
-    ];
+    async function fetchNews() {
+      try {
+        setIsLoading(true);
+        const response = await fetch(`/api/news?sector=${selectedSector}`);
+        const newsData = await response.json();
 
-    setArticles(mockArticles);
-    setIsLoading(false);
-  }, []);
+        if (!response.ok) throw new Error("Failed to fetch news");
+
+        setArticles(newsData);
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error fetching news:", error);
+        setIsLoading(false);
+      }
+    }
+
+    fetchNews();
+  }, [selectedSector]);
 
   const toggleSave = (articleId: string) => {
     setArticles(
@@ -120,8 +67,7 @@ export default function NewsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white p-4 text-black">
-      {/* Date Header */}
+    <div className="min-h-screen bg-white p-4 text-black ml-20">
       <div className="border-b border-black py-2 mb-6">
         <p className="text-sm uppercase tracking-wider">
           {new Date().toLocaleDateString("en-US", {
@@ -133,12 +79,10 @@ export default function NewsPage() {
         </p>
       </div>
 
-      {/* Masthead */}
       <h1 className="text-center font-playfair text-6xl md:text-7xl mb-8 border-b-2 border-black pb-4">
         Financial Intelligence
       </h1>
 
-      {/* Section Navigation */}
       <div className="flex justify-center space-x-2 mb-8 border-y border-black py-2">
         {["All", "Tech", "Finance", "Retail"].map((sector) => (
           <button
@@ -156,7 +100,6 @@ export default function NewsPage() {
         ))}
       </div>
 
-      {/* News Grid */}
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-6 gap-px border border-black">
           {articles.map((article, index) => (
@@ -166,6 +109,17 @@ export default function NewsPage() {
                 ${index === 0 ? "md:col-span-4 md:row-span-2" : "md:col-span-2"}
               `}
             >
+              {article.image && (index === 0 || index === 5) && (
+                <div className="relative w-full h-48 mb-4 overflow-hidden rounded">
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              )}
+
               <div className="flex justify-between items-start mb-3">
                 <h2
                   className={`font-playfair ${
@@ -239,4 +193,41 @@ export default function NewsPage() {
       </div>
     </div>
   );
+}
+
+function generateImpact(sector: string, text: string): string {
+  const keywords = {
+    tech: ["technology", "digital", "software", "AI", "cyber"],
+    finance: ["market", "investment", "stock", "economy", "financial"],
+    retail: ["consumer", "sales", "store", "shopping", "retail"],
+  };
+
+  const sectorKeywords = keywords[sector as keyof typeof keywords];
+  const words = text.toLowerCase().split(" ");
+  const hasKeywords = sectorKeywords.some((keyword) =>
+    words.includes(keyword.toLowerCase())
+  );
+
+  if (hasKeywords) {
+    return `Significant impact expected in ${sector} sector based on market trends.`;
+  }
+  return `Limited impact expected in ${sector} sector.`;
+}
+
+function analyzeSentiment(text: string): "positive" | "negative" | "neutral" {
+  const positiveWords = ["growth", "increase", "positive", "gain", "recovery"];
+  const negativeWords = ["decline", "decrease", "negative", "loss", "crisis"];
+
+  const words = text.toLowerCase().split(" ");
+  let positiveCount = 0;
+  let negativeCount = 0;
+
+  words.forEach((word) => {
+    if (positiveWords.includes(word)) positiveCount++;
+    if (negativeWords.includes(word)) negativeCount++;
+  });
+
+  if (positiveCount > negativeCount) return "positive";
+  if (negativeCount > positiveCount) return "negative";
+  return "neutral";
 }
