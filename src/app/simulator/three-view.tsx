@@ -11,12 +11,14 @@ interface Building {
 interface Road {
   points: [number, number, number][];
   width: number;
+  direction: number;
 }
 
 interface Vehicle {
   position: [number, number, number];
   direction: [number, number, number];
   type: string;
+  path: [number, number, number][];
 }
 
 interface SimulationData {
@@ -97,12 +99,12 @@ const ThreeView = ({ simulationData }: { simulationData: SimulationData }) => {
       scene.add(mesh);
     });
 
-    // Add roads
+    // Add roads with direction indicators
     simulationData.roads.forEach((road) => {
       const points = road.points.map((point) => new THREE.Vector3(...point));
       const roadGeometry = new THREE.BufferGeometry().setFromPoints(points);
       const roadMaterial = new THREE.LineBasicMaterial({
-        color: 0x444444,
+        color: road.direction === 2 ? 0x4444ff : 0x44ff44,
         linewidth: road.width,
       });
       const roadLine = new THREE.Line(roadGeometry, roadMaterial);
@@ -118,41 +120,41 @@ const ThreeView = ({ simulationData }: { simulationData: SimulationData }) => {
       scene.add(sphere);
     });
 
-    // Animation loop
-    const animate = () => {
-      requestAnimationFrame(animate);
-
-      // Update vehicles
-      updateVehicles();
-
-      controls.update();
-      renderer.render(scene, camera);
-    };
-
     // Vehicle movement
     const updateVehicles = () => {
       // Remove old vehicles
       vehiclesRef.current.forEach((vehicle) => scene.remove(vehicle));
       vehiclesRef.current = [];
 
-      // Add new vehicles
-      simulationData.vehicles.forEach((vehicle) => {
+      // Add new vehicles with animation along their paths
+      simulationData.vehicles.forEach((vehicle, index) => {
+        const time = (Date.now() * 0.001) % 10; // 10-second loop
+        const pathIndex = Math.floor((time / 10) * vehicle.path.length);
+        const currentPos = vehicle.path[pathIndex];
+        const nextPos = vehicle.path[(pathIndex + 1) % vehicle.path.length];
+
         const geometry = new THREE.BoxGeometry(2, 1, 4);
         const material = new THREE.MeshPhongMaterial({
           color: vehicle.type === "car" ? 0x00ff00 : 0x0000ff,
         });
         const mesh = new THREE.Mesh(geometry, material);
-        mesh.position.set(...vehicle.position);
-        mesh.lookAt(
-          new THREE.Vector3(
-            vehicle.position[0] + vehicle.direction[0],
-            vehicle.position[1] + vehicle.direction[1],
-            vehicle.position[2] + vehicle.direction[2]
-          )
-        );
+
+        if (currentPos && nextPos) {
+          mesh.position.set(...currentPos);
+          mesh.lookAt(new THREE.Vector3(...nextPos));
+        }
+
         scene.add(mesh);
         vehiclesRef.current.push(mesh);
       });
+    };
+
+    // Animation loop
+    const animate = () => {
+      requestAnimationFrame(animate);
+      updateVehicles();
+      controls.update();
+      renderer.render(scene, camera);
     };
 
     animate();

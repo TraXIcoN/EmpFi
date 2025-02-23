@@ -1205,6 +1205,18 @@ export default function Simulator() {
           </div>
         </div>
       )}
+
+      {isInSimulation && (
+        <div className="p-6">
+          <a
+            href="/simulator/three-d"
+            className="inline-block px-6 py-3 bg-blue-500/20 hover:bg-blue-500/30 
+                     text-blue-400 rounded-lg border border-blue-500/30 transition-all"
+          >
+            Open 3D Visualization
+          </a>
+        </div>
+      )}
     </div>
   );
 }
